@@ -63,9 +63,11 @@ async function getPlayerData(usernames) {
             const totalLvl = parseInt(splitPlayerData[0].split(',')[1])
             const skillData = new Map()
             for (let i = 0; i < skills.length; i++) {
+                // splitPlayerData: skill, rank, experience
                 if (splitPlayerData[i].split(',')[2] === '-1')
                     splitPlayerData[i].split(',')[2] = parseInt(0)
                 skillData[skills[i]] = parseInt(splitPlayerData[i + 1].split(',')[2])
+
                 // skillData.set(skills[i], parseInt(splitPlayerData[i + 1].split(',')[2]))
             }
             const playerName = player
