@@ -1,27 +1,28 @@
 require('dotenv').config()
 const express = require('express')
-
-const { getPlayerData, getUsernames } = require('./main')
 const app = express()
 const mongoose = require('mongoose')
+const playerData = require('./routes/data')
 
-mongoose.connect(process.env.DATABASE_URL)
-const db = mongoose.connection
-db.on("error", (error) => console.error(error))
-db.once('open', () => console.log('Connected to Database'))
+// Connect to db
+// async task
+mongoose.connect(process.env.DATABASE_CONNECTION, {useUnifiedTopology: true})
+  .then(() => {
+    // Listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log('connected to db & listening on port', process.env.PORT)
+    })
+  })
+  .catch((err) => console.log(err, 'error'))
+
+// Middleware logger
 app.use(express.json())
-
-
-app.get('/', (request, response) => {
-    response.send('hello world!!')
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
 })
 
-app.get('/api/data', async (req, res) => {
-    const usernames = await getUsernames()
-    const data = await getPlayerData(usernames)
-
-    res.status(200).json(data)
-})
+// Routes
+app.use('/api/data', playerData)
 
 
-app.listen(3000)
