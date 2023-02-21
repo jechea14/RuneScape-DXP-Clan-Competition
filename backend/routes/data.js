@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const { getPlayerData, getUsernames } = require('../main')
 const {
-    getAllData
+    getAllData,
+    getSingleData
 } = require('../controllers/playerDataController')
 
 router.get('/', getAllData)
@@ -32,26 +33,8 @@ router.get('/add-data', (req, res) => {
     })
 })
 
-router.get('/get-all-data', (req, res) => {
-  Player.find()
-    .then((result) => {
-      res.json(result)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
-
 // GET single player data
-router.get('/:id', (req, res) => {
-  Player.findById('63f2d06cd8c0ac3def6ced20')
-    .then((result) => {
-      res.json(result)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
+router.get('/:id', getSingleData)
 
 
 module.exports = router
