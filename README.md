@@ -10,8 +10,9 @@ Backend & API:
 
 - Runtime: Node.js
 - API Framework: Express
-- ORM: Prisma
+- ODM: Mongoose
 - Database: MongoDB
+- Cronjobs
 
 ## TODO:
 
