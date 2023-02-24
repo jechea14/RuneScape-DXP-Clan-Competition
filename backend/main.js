@@ -85,5 +85,6 @@ async function getPlayerData(usernames) {
 
 module.exports = {
     getPlayerData,
-    getUsernames
+    getUsernames,
+    fetchPlayerData
 }
