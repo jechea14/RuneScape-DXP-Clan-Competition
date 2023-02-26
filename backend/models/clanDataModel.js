@@ -124,18 +124,16 @@ const playerDataSchema = new Schema({
         required: true
     },
 
-}, {timestamps: true})
+}, { timestamps: true })
 
 // Model : wrapper for collection
 // const date = String(new Date())
 // const PlayerData = mongoose.model(date, playerDataSchema)
 
 function createModel(data) {
-    const modelName = String(new Date()).split(' ').splice(0, 5).join(' ');
-    if (mongoose.models[modelName]) {
-      return mongoose.model(modelName);
-    } else {
-      return mongoose.model(modelName, playerDataSchema);
-    }}
+    const dateNow = new Date()
+    const modelName = dateNow.toISOString().replace("T", " ").substring(0, 19);
+    return mongoose.model(modelName, playerDataSchema);
+}
 
 module.exports = createModel
