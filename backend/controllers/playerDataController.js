@@ -3,25 +3,59 @@ const { getPlayerData, getUsernames } = require('../main')
 const mongoose = require('mongoose')
 
 // get all data
-async function getAllData (req, res) {
-    const players = await Player.find({})
-    res.status(200).json(players)
-    
+async function getAllData(req, res) {
+  try {
+    const collections = await mongoose.connection.db.listCollections().toArray();
+    const collectionPromises = collections.map(collection => {
+      const Model = mongoose.model(collection.name, playerDataSchema);
+      return Model.find().exec();
+    });
+    const results = await Promise.all(collectionPromises);
+    const collectionsData = collections.map((collection, index) => ({
+      name: collection.name,
+      data: results[index]
+    }));
+    res.status(200).json({ collections: collectionsData });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+async function getOldestAndLatestData (req, res) {
+    mongoose.connection.db.listCollections().toArray((err, collections) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+        } else {
+          const collectionPromises = collections.map(collection => {
+            const model = mongoose.model(collection.name, new mongoose.Schema({}));
+            return model.find().exec();
+          });
+          Promise.all(collectionPromises).then(results => {
+            const collectionsData = collections.map((collection, index) => ({
+              name: collection.name,
+              data: results[index]
+            }));
+            res.status(200).json({ oldestCollection: collectionsData[0], latestCollection: collectionsData[collectionsData.length - 1]});
+          }).catch(error => {
+            res.status(500).json({ error: error.message });
+          });
+        }
+      });
 }
 
 // get a single data
 async function getSingleData (req, res) {
-    const {id} = req.params
+    // const {id} = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: "No such player"})
-    }
+    // if (!mongoose.Types.ObjectId.isValid(id)) {
+    //     return res.status(404).json({error: "No such player"})
+    // }
 
-    const player = await Player.findById(id)
-    if (!player) {
-        return res.status(404).json({error: "No such player"})
-    }
-    res.status(200).json(player)
+    // const player = await Player.findById(id)
+    // if (!player) {
+    //     return res.status(404).json({error: "No such player"})
+    // }
+    // res.status(200).json(player)
 }
 
 async function cleanData (req, res) {
@@ -71,28 +105,9 @@ async function cleanData (req, res) {
     res.status(200).send({message: 'data inserted into db'})
 }
 
-async function addData (req, res) {
-    const player = new Player({
-        username: 'icekrystalx2',
-        total_level: 2898,
-        attack: 1928384,
-        defense: 2384845
-    })
-    
-    // async task
-    player.save()
-        .then((result) => {
-        res.json(result)
-        })
-        .catch((err) => {
-        console.log(err)
-        })
-
-}
-
 module.exports = {
     getAllData,
     getSingleData,
-    addData,
-    cleanData
+    cleanData,
+    getOldestAndLatestData
 }

@@ -131,8 +131,11 @@ const playerDataSchema = new Schema({
 // const PlayerData = mongoose.model(date, playerDataSchema)
 
 function createModel(data) {
-    const modelName = String(new Date())
-    return mongoose.model(modelName, playerDataSchema)
-}
+    const modelName = String(new Date()).split(' ').splice(0, 5).join(' ');
+    if (mongoose.models[modelName]) {
+      return mongoose.model(modelName);
+    } else {
+      return mongoose.model(modelName, playerDataSchema);
+    }}
 
 module.exports = createModel
