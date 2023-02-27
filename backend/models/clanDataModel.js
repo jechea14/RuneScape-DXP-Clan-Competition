@@ -126,14 +126,18 @@ const playerDataSchema = new Schema({
 
 }, { timestamps: true })
 
+const playersSchema = new Schema({
+    players: [playerDataSchema]
+}, { timestamps: true })
+
 // Model : wrapper for collection
 // const date = String(new Date())
-// const PlayerData = mongoose.model(date, playerDataSchema)
+const Players = mongoose.model('Snapshot', playersSchema)
+module.exports = Players
+// function createModel(data) {
+//     const dateNow = new Date()
+//     const modelName = dateNow.toISOString().replace("T", " ").substring(0, 19);
+//     return mongoose.model(modelName, playerDataSchema);
+// }
 
-function createModel(data) {
-    const dateNow = new Date()
-    const modelName = dateNow.toISOString().replace("T", " ").substring(0, 19);
-    return mongoose.model(modelName, playerDataSchema);
-}
-
-module.exports = createModel
+// module.exports = createModel

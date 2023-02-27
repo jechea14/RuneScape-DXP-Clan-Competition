@@ -1,34 +1,34 @@
 const axios = require('axios').default;
 
 const skills = [
-    "Attack",
-    "Defense",
-    "Strength",
-    "Constitution",
-    "Ranged",
-    "Prayer",
-    "Magic",
-    "Cooking",
-    "Woodcutting",
-    "Fletching",
-    "Fishing",
-    "Firemaking",
-    "Crafting",
-    "Smithing",
-    "Mining",
-    "Herblore",
-    "Agility",
-    "Thieving",
-    "Slayer",
-    "Farming",
-    "Runecrafting",
-    "Hunter",
-    "Construction",
-    "Summoning",
-    "Dungeoneering",
-    "Divination",
-    "Invention",
-    "Archaeology"
+    "attack",
+    "defense",
+    "strength",
+    "constitution",
+    "ranged",
+    "prayer",
+    "magic",
+    "cooking",
+    "woodcutting",
+    "fletching",
+    "fishing",
+    "firemaking",
+    "crafting",
+    "smithing",
+    "mining",
+    "herblore",
+    "agility",
+    "thieving",
+    "slayer",
+    "farming",
+    "runecrafting",
+    "hunter",
+    "construction",
+    "summoning",
+    "dungeoneering",
+    "divination",
+    "invention",
+    "archaeology"
 ]
 
 async function fetchClan() {
@@ -60,7 +60,7 @@ async function getPlayerData(usernames) {
             console.log(player + ' - hiscores')
             const playerData = await fetchPlayerData(player)
             const splitPlayerData = playerData.split('\n')
-            const totalLvl = parseInt(splitPlayerData[0].split(',')[1])
+            const total_level = parseInt(splitPlayerData[0].split(',')[1])
             const skillData = new Map()
             for (let i = 0; i < skills.length; i++) {
                 // splitPlayerData: skill, rank, experience
@@ -70,8 +70,8 @@ async function getPlayerData(usernames) {
 
                 // skillData.set(skills[i], parseInt(splitPlayerData[i + 1].split(',')[2]))
             }
-            const playerName = player
-            etkData.push({ playerName, totalLvl, ...skillData })
+            const username = player
+            etkData.push({ username, total_level, ...skillData })
         } catch (error) {
             console.log(`Not found in hiscores`)
         }
