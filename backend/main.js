@@ -80,9 +80,6 @@ async function getPlayerData(usernames) {
     return etkData
 }
 
-// getUsernames()
-// getPlayerData(usernames)
-
 module.exports = {
     getPlayerData,
     getUsernames,
