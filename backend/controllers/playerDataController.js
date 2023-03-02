@@ -94,7 +94,7 @@ async function cleanData(req, res) {
     const playersData = {
       players: data
     }
-    Players.create(playersData)
+    Players.create(data)
       .then()
       .catch((err) => {
         console.log(err)

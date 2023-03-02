@@ -1,16 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// Schema : structure of the document (row)
-const playerDataSchema = new Schema({
-    username: {
-        type: String,
-        required: true
-    },
-    total_level: {
-        type: Number,
-        required: true
-    },
+const skillSchema = new Schema({
     attack: {
         type: Number,
         required: true
@@ -123,6 +114,21 @@ const playerDataSchema = new Schema({
         type: Number,
         required: true
     },
+})
+
+// Schema : structure of the document (row)
+const playerDataSchema = new Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    total_level: {
+        type: Number,
+        required: true
+    },
+    skillXP: [skillSchema]
+    
+ 
 
 }, { timestamps: true })
 
@@ -132,7 +138,7 @@ const playersSchema = new Schema({
 
 // Model : wrapper for collection
 // const date = String(new Date())
-const Players = mongoose.model('Snapshot', playersSchema)
+const Players = mongoose.model('Snapshots', playerDataSchema)
 module.exports = Players
 // function createModel(data) {
 //     const dateNow = new Date()

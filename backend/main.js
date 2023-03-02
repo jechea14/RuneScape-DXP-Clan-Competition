@@ -61,7 +61,7 @@ async function getPlayerData(usernames) {
             const playerData = await fetchPlayerData(player)
             const splitPlayerData = playerData.split('\n')
             const total_level = parseInt(splitPlayerData[0].split(',')[1])
-            const skillData = new Map()
+            const skillData = {}
             for (let i = 0; i < skills.length; i++) {
                 // splitPlayerData: skill, rank, experience
                 if (splitPlayerData[i].split(',')[2] === '-1')
@@ -71,7 +71,7 @@ async function getPlayerData(usernames) {
                 // skillData.set(skills[i], parseInt(splitPlayerData[i + 1].split(',')[2]))
             }
             const username = player
-            etkData.push({ username, total_level, ...skillData })
+            etkData.push({ username, total_level, skillXP: [skillData] })
         } catch (error) {
             console.log(`Not found in hiscores`)
         }
