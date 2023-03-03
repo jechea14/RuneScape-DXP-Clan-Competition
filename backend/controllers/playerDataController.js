@@ -8,8 +8,14 @@ const mongoose = require('mongoose')
 async function getAllData(req, res) {
   try {
     const docs = await mongoose.connection.db.collection('snapshots').find().toArray()
-    // const oldestSnapshot = docs[0]
-    // const latestSnapshot = docs[docs.length - 1]
+
+    // const cursor = await mongoose.connection.db.collection('snapshots').find({username: "Aczinor9"}).sort({createdAt: 1}).toArray()
+    // const oldest = cursor[0]
+    // const latest = cursor[cursor.length - 1]
+    const pipeline = []
+    const pipelineResults = await mongoose.connection.db.collection('snapshots').aggregate(pipeline)
+    // console.log(oldest, latest)
+    
     res.status(200).json({ data: docs })
   } catch (error) {
     console.log(error)
@@ -99,9 +105,12 @@ async function cleanData(req, res) {
       .catch((err) => {
         console.log(err)
       })
+
+
   } catch (error) {
     console.log(error)
   }
+
 
   res.status(200).send({ message: 'data inserted into db!' })
   //   const userData = new DataModel({
