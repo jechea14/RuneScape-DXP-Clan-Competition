@@ -1,5 +1,6 @@
 // const createModel = require('../models/clanDataModel')
 const Players = require('../models/clanDataModel')
+const pipeline = require('../pipeline')
 const { getPlayerData, getUsernames } = require('../main')
 const mongoose = require('mongoose')
 
@@ -8,15 +9,13 @@ const mongoose = require('mongoose')
 async function getAllData(req, res) {
   try {
     const docs = await mongoose.connection.db.collection('snapshots').find().toArray()
-
-    // const cursor = await mongoose.connection.db.collection('snapshots').find({username: "Aczinor9"}).sort({createdAt: 1}).toArray()
-    // const oldest = cursor[0]
-    // const latest = cursor[cursor.length - 1]
-    const pipeline = []
-    const pipelineResults = await mongoose.connection.db.collection('snapshots').aggregate(pipeline)
-    // console.log(oldest, latest)
-    
-    res.status(200).json({ data: docs })
+    const usernames = await getUsernames()
+    const dxpResults = []
+    for(user of usernames) {
+      const result = await mongoose.connection.db.collection('snapshots').aggregate(pipeline(user)).toArray();
+      dxpResults.push(result)
+    }
+    res.status(200).json({ data: dxpResults })
   } catch (error) {
     console.log(error)
   }
