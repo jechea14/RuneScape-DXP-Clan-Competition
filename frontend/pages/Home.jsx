@@ -26,9 +26,9 @@ function Home() {
       setData(
         res.data.data
           .reverse(
-            (a, b) => a[0].totalLevelBeforeDxp - b[0].totalLevelBeforeDxp
+            (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
           )
-          .filter((user) => user[0].dxpComptotal > 0)
+          .filter((user) => user.dxpComptotal > 0)
       );
       setIsLoading(false);
     };
@@ -38,36 +38,36 @@ function Home() {
   useEffect(() => {
     if (data.length > 0) {
       const bracketA = data.filter(
-        (user) => user[0].totalLevelBeforeDxp <= 2000
+        (user) => user.totalLevelBeforeDxp <= 2000
       );
 
       const bracketB = data.filter(
         (user) =>
-          user[0].totalLevelBeforeDxp >= 2001 &&
-          user[0].totalLevelBeforeDxp <= 2300
+          user.totalLevelBeforeDxp >= 2001 &&
+          user.totalLevelBeforeDxp <= 2300
       );
       const bracketC = data.filter(
         (user) =>
-          user[0].totalLevelBeforeDxp >= 2301 &&
-          user[0].totalLevelBeforeDxp <= 2600
+          user.totalLevelBeforeDxp >= 2301 &&
+          user.totalLevelBeforeDxp <= 2600
       );
       const bracketD = data.filter(
         (user) =>
-          user[0].totalLevelBeforeDxp >= 2601 &&
-          user[0].totalLevelBeforeDxp <= 2700
+          user.totalLevelBeforeDxp >= 2601 &&
+          user.totalLevelBeforeDxp <= 2700
       );
       const bracketE = data.filter(
         (user) =>
-          user[0].totalLevelBeforeDxp >= 2701 &&
-          user[0].totalLevelBeforeDxp <= 2800
+          user.totalLevelBeforeDxp >= 2701 &&
+          user.totalLevelBeforeDxp <= 2800
       );
       const bracketF = data.filter(
         (user) =>
-          user[0].totalLevelBeforeDxp >= 2801 &&
-          user[0].totalLevelBeforeDxp <= 2850
+          user.totalLevelBeforeDxp >= 2801 &&
+          user.totalLevelBeforeDxp <= 2850
       );
       const bracketG = data.filter(
-        (user) => user[0].totalLevelBeforeDxp >= 2851
+        (user) => user.totalLevelBeforeDxp >= 2851
       );
 
       setBracketA(bracketA);

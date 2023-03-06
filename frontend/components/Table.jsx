@@ -17,10 +17,10 @@ function Table({ bracketName, arr }) {
         {arr.map((userArr, counter) => {
           counter += 1;
           return (
-            <tr key={userArr[0]._id}>
+            <tr key={userArr._id}>
               <td>{counter}</td>
-              <td>{userArr[0]._id}</td>
-              <td>{userArr[0].dxpComptotal.toFixed(2)}</td>
+              <td>{userArr._id}</td>
+              <td>{userArr.dxpComptotal.toFixed(2)}</td>
             </tr>
           );
         })}

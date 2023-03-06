@@ -15,7 +15,7 @@ router.get('/', getAllData)
 router.get('/clean-data', cleanData)
 
 // GET single player data
-router.get('/:id', getSingleData)
+router.get('/player/:id', getSingleData)
 
 
 

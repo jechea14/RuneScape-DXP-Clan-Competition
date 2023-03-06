@@ -116,6 +116,73 @@ const skillSchema = new Schema({
     },
 })
 
+const dxpResultSchema = new mongoose.Schema({
+    _id: String,
+    totalLevelBeforeDxp: Number,
+    xpDeltas: [{
+        attackDiff: Number,
+        defenseDiff: Number,
+        strengthDiff: Number,
+        constitutionDiff: Number,
+        rangedDiff: Number,
+        prayerDiff: Number,
+        magicDiff: Number,
+        cookingDiff: Number,
+        woodcuttingDiff: Number,
+        fletchingDiff: Number,
+        fishingDiff: Number,
+        firemakingDiff: Number,
+        craftingDiff: Number,
+        smithingDiff: Number,
+        miningDiff: Number,
+        herbloreDiff: Number,
+        agilityDiff: Number,
+        thievingDiff: Number,
+        slayerDiff: Number,
+        farmingDiff: Number,
+        runecraftingDiff: Number,
+        hunterDiff: Number,
+        constructionDiff: Number,
+        summoningDiff: Number,
+        dungeoneeringDiff: Number,
+        divinationDiff: Number,
+        inventionDiff: Number,
+        archaeologyDiff: Number
+    }],
+    latestXp: [skillSchema],
+    dxpCompResults: [{
+        attackResult: Number,
+        defenseResult: Number,
+        strengthResult: Number,
+        constitutionResult: Number,
+        rangedResult: Number,
+        prayerResult: Number,
+        magicResult: Number,
+        cookingResult: Number,
+        woodcuttingResult: Number,
+        fletchingResult: Number,
+        fishingResult: Number,
+        firemakingResult: Number,
+        craftingResult: Number,
+        smithingResult: Number,
+        miningResult: Number,
+        herbloreResult: Number,
+        agilityResult: Number,
+        thievingResult: Number,
+        slayerResult: Number,
+        farmingResult: Number,
+        runecraftingResult: Number,
+        hunterResult: Number,
+        constructionResult: Number,
+        summoningResult: Number,
+        dungeoneeringResult: Number,
+        divinationResult: Number,
+        inventionResult: Number,
+        archaeologyResult: Number
+    }],
+    dxpComptotal: Number
+}, { timestamps: true });
+
 // Schema : structure of the document (row)
 const playerDataSchema = new Schema({
     username: {
@@ -127,23 +194,10 @@ const playerDataSchema = new Schema({
         required: true
     },
     skillXP: [skillSchema]
-    
- 
 
-}, { timestamps: true })
-
-const playersSchema = new Schema({
-    players: [playerDataSchema]
 }, { timestamps: true })
 
 // Model : wrapper for collection
-// const date = String(new Date())
 const Players = mongoose.model('Snapshots', playerDataSchema)
-module.exports = Players
-// function createModel(data) {
-//     const dateNow = new Date()
-//     const modelName = dateNow.toISOString().replace("T", " ").substring(0, 19);
-//     return mongoose.model(modelName, playerDataSchema);
-// }
-
-// module.exports = createModel
+const PlayerResults = mongoose.model('DxpResults', dxpResultSchema)
+module.exports = { Players, PlayerResults }
