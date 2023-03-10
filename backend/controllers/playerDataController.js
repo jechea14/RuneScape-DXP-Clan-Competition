@@ -16,7 +16,7 @@ async function getAllData(req, res) {
   }
 }
 
-// get a single data
+// Retrieve individual player data from db
 async function getSingleData(req, res) {
   const { id } = req.params
 
@@ -27,6 +27,8 @@ async function getSingleData(req, res) {
   res.status(200).json(player)
 }
 
+
+// Save pipeline results to a collection from the model. Update existing data or create data if data does not exist
 async function savePipelineResults(usernames) {
   try {
     for (user of usernames) {
