@@ -82,16 +82,6 @@ function authMiddleware(req, res, next) {
   }
   next()
 }
-// function authMiddleware(apiKey) {
-//   return function (req, res, next) {
-//     const apiKeyHeader = req.headers['x-api-key']
-//     if (!apiKeyHeader || apiKeyHeader !== apiKey) {
-//       console.log(apiKeyHeader, process.env.API_KEY)
-//       return res.status(401).send("401 unauthorized")
-//     }
-//     next()
-//   }
-// }
 
 module.exports = {
   getAllData,
