@@ -3,11 +3,12 @@ const { PlayerResults } = require('../models/clanDataModel.js')
 const pipeline = require('../pipeline')
 const { getPlayerData, getUsernames } = require('../main')
 const mongoose = require('mongoose')
-
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 async function getAllData(req, res) {
   try {
-    const usernames = await getUsernames()
+    // const usernames = await getUsernames()
     const getData = await mongoose.connection.db.collection('dxpresults').find().toArray()
     // savePipelineResults(usernames)
     res.status(200).json({ data: getData })
@@ -73,8 +74,28 @@ async function cleanData(req, res) {
   res.status(200).send({ message: 'data inserted into db!' })
 }
 
+function authMiddleware(req, res, next) {
+  const apiKeyHeader = req.headers['x-api-key']
+  if (!apiKeyHeader || apiKeyHeader !== process.env.API_KEY) {
+    console.log(apiKeyHeader, process.env.API_KEY)
+    return res.status(401).send("401 unauthorized")
+  }
+  next()
+}
+// function authMiddleware(apiKey) {
+//   return function (req, res, next) {
+//     const apiKeyHeader = req.headers['x-api-key']
+//     if (!apiKeyHeader || apiKeyHeader !== apiKey) {
+//       console.log(apiKeyHeader, process.env.API_KEY)
+//       return res.status(401).send("401 unauthorized")
+//     }
+//     next()
+//   }
+// }
+
 module.exports = {
   getAllData,
   getSingleData,
   cleanData,
+  authMiddleware
 }

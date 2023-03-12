@@ -4,10 +4,8 @@ import { useState, useEffect } from "react";
 import Table from "../components/Table";
 
 function Home() {
-  // const { isLoading, error, data } = useQuery({
-  //   queryKey: ["data"],
-  //   queryFn: () =>
-  //     axios.get("http://localhost:3000/api/data/get-oldest-and-latest-data"),
+  // const { isLoading, error, data } = useQuery('data', () => {
+  //   axios.get("http://localhost:3000/api/data/")
   // });
   // console.log(data);
   const [data, setData] = useState([]);
@@ -20,7 +18,7 @@ function Home() {
   const [bracketF, setBracketF] = useState([]);
   const [bracketG, setBracketG] = useState([]);
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
     const fetchData = async () => {
       const res = await axios.get("http://localhost:3000/api/data/");
       setData(
@@ -30,7 +28,7 @@ function Home() {
           )
           .filter((user) => user.dxpComptotal > 0)
       );
-      setIsLoading(false);
+      // setIsLoading(false);
     };
     fetchData();
   }, []);
