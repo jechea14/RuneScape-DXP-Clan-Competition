@@ -4,6 +4,8 @@ const cors = require('cors');
 const app = express()
 const mongoose = require('mongoose')
 const playerData = require('./routes/data')
+const cron = require('node-cron');
+const {cleanData} = require('./main.js')
 
 // Connect to db
 // async task
@@ -12,6 +14,10 @@ mongoose.connect(process.env.DATABASE_CONNECTION, { useUnifiedTopology: true })
     // Listen for requests
     app.listen(process.env.PORT, () => {
       console.log('connected to db & listening on port', process.env.PORT)
+      // cron.schedule('*/5 * * * *', () => {
+      //   console.log('running cron job...')
+      //   cleanData()
+      // })
     })
   })
   .catch((err) => console.log(err, 'error'))

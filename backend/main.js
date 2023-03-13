@@ -1,3 +1,6 @@
+const { Players, PlayerResults } = require('./models/clanDataModel');
+const pipeline = require('./pipeline');
+const mongoose = require('mongoose')
 const axios = require('axios').default;
 
 const skills = [
@@ -49,7 +52,7 @@ async function getUsernames() {
     for (let i = 1; i < splitData.length; i++) {
         usernames.push(splitData[i].split(',')[0].replaceAll('�', ' '))
     }
-    console.log(usernames)
+    // console.log(usernames)
     return usernames
 }
 
@@ -76,12 +79,53 @@ async function getPlayerData(usernames) {
             console.log(`Not found in hiscores`)
         }
     }
-    console.log(etkData)
+    // console.log(etkData)
     return etkData
 }
 
+// Save pipeline results to a collection from the model. Update existing data or create data if data does not exist
+async function savePipelineResults(usernames) {
+    try {
+      for (user of usernames) {
+        const result = await mongoose.connection.db.collection('snapshots').aggregate(pipeline(user)).toArray();
+        if (result.length === 0) {
+          continue
+        }
+        else {
+          const existingResult = await PlayerResults.findOne({ _id: result[0]._id })
+          if (existingResult) {
+            await PlayerResults.findOneAndUpdate({ _id: result[0]._id }, result[0])
+            console.log(`updating ${result[0]._id}`)
+          }
+          else {
+            await PlayerResults.create(result[0])
+            console.log("creating...")
+          }
+        }
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+async function cleanData() {
+    try {
+      const usernames = await getUsernames()
+      const data = await getPlayerData(usernames)
+  
+      Players.create(data)
+        .then()
+        .catch((err) => {
+          console.log(err)
+        })
+  
+      savePipelineResults(usernames)
+  
+    } catch (error) {
+      console.log(error)
+    }
+}
+
 module.exports = {
-    getPlayerData,
-    getUsernames,
-    fetchPlayerData
+    cleanData
 }

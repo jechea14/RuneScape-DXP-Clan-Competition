@@ -198,6 +198,6 @@ const playerDataSchema = new Schema({
 }, { timestamps: true })
 
 // Model : wrapper for collection
-const Players = mongoose.model('Snapshots', playerDataSchema)
+const Players = mongoose.model('snapshots', playerDataSchema)
 const PlayerResults = mongoose.model('DxpResults', dxpResultSchema)
 module.exports = { Players, PlayerResults }
