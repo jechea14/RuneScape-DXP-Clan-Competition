@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { useState, useEffect } from "react";
 import Table from "../components/Table";
 
 function Home() {
@@ -8,7 +7,7 @@ function Home() {
   async function fetchData() {
     const res = await axios.get("http://localhost:3000/api/data/");
     const sortData = await res.data.data
-      .reverse((a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp)
+      .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
       .filter((user) => user.dxpComptotal > 0);
     return sortData;
   }
@@ -36,14 +35,12 @@ function Home() {
   );
   const bracketG = data?.filter((user) => user.totalLevelBeforeDxp >= 2851);
 
-  console.log(data);
-
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error {error}</div>;
 
   return (
     <div>
-      <h2>Homee</h2>
+      <h2>DXP Competition</h2>
 
       {data && (
         <div>
