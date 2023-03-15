@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Navbar from "../src/components/Navbar";
+import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
