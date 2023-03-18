@@ -1,27 +1,32 @@
 import React from 'react'
-import axios from "axios";
 
 export default function Player({playerData}) {
-
       return (
         <table>
         <thead>
           <tr>
-            <th>Skill</th>
-            <th>Starting XP</th>
-            <th>XP Gained</th>
-            <th>Total XP</th>
+            <td></td>
+            <td>Current Xp</td>
+            <td>XP Gained</td>
+            <td>DXP Comp</td>
           </tr>
         </thead>
         <tbody>
-          {playerData[0].xpDeltas.map((delta, index) => (
-            <tr key={index}>
-              <td>{Object.keys(delta)[0].replace("Diff", "")}</td>
-              <td>{playerData[0].latestXp[0][Object.keys(delta)[0].replace("Diff", "").toLowerCase()]}</td>
-              <td>{Object.values(playerData[0].dxpCompResults[index])[0]}</td>
-              <td>{Object.values(playerData[0].latestXp[0])[index]}</td>
-            </tr>
-          ))}
+          {
+            Object.keys(playerData[0].latestXp).map((keyName, keyIndex) => {
+                if(keyName === '_id') {
+                    return null
+                }
+                return (
+                    <tr key={keyIndex}>
+                        <td>{keyName}</td>
+                        <td>{playerData[0].latestXp[keyName]}</td>
+                        <td className='text-green-800 font-bold'>{playerData[0].xpDeltas[keyName]}</td>
+                        <td>{playerData[0].dxpCompResults[keyName]}</td>
+                    </tr>
+                )
+            })
+          }
         </tbody>
       </table>
       );
@@ -30,7 +35,6 @@ export default function Player({playerData}) {
 export async function getServerSideProps(context) {
     const res = await fetch(`http://localhost:3000/api/data/player/${context.params.id}`);
     const playerData = await res.json()
-
     return {
         props: {
             playerData
