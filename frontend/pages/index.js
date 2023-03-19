@@ -1,13 +1,12 @@
 import axios from "axios";
-import { useQuery } from "react-query";
 import Table from "../components/Table";
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({sortData}) {
+export default function Home({ sortData }) {
   // const { isLoading, error, data } = useQuery("data", fetchData);
-
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
@@ -36,21 +35,22 @@ export default function Home({sortData}) {
   // if (error) return <div>Error {error}</div>;
 
   return (
-    <div>
+    <main>
       <h2>DXP Competition</h2>
-
-      {sortData && (
-        <div>
-          <Table bracketName={"Bracket A"} arr={bracketA} />
-          <Table bracketName={"Bracket B"} arr={bracketB} />
-          <Table bracketName={"Bracket C"} arr={bracketC} />
-          <Table bracketName={"Bracket D"} arr={bracketD} />
-          <Table bracketName={"Bracket E"} arr={bracketE} />
-          <Table bracketName={"Bracket F"} arr={bracketF} />
-          <Table bracketName={"Bracket G"} arr={bracketG} />
-        </div>
-      )}
-    </div>
+      <div className="flex flex-col items-center">
+        {sortData && (
+          <div className="">
+            <Table bracketName={"Bracket A"} arr={bracketA} />
+            <Table bracketName={"Bracket B"} arr={bracketB} />
+            <Table bracketName={"Bracket C"} arr={bracketC} />
+            <Table bracketName={"Bracket D"} arr={bracketD} />
+            <Table bracketName={"Bracket E"} arr={bracketE} />
+            <Table bracketName={"Bracket F"} arr={bracketF} />
+            <Table bracketName={"Bracket G"} arr={bracketG} />
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
 
@@ -59,5 +59,5 @@ export async function getServerSideProps() {
   const sortData = await res.data.data
     .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
     .filter((user) => user.dxpComptotal > 0);
-  return {props: {sortData}};
+  return { props: { sortData } };
 }
