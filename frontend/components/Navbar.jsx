@@ -4,13 +4,17 @@ import etkIcon from "../public/images/ETK_transparent.png";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="flex items-center justify-between bg-[#111111] space-x-2 p-2">
       <Link href={"/"}>
-        <div className="flex justify-center items-center bg-[#111111] space-x-2 pt-2 pb-2">
+        <div className="flex items-center">
           <Image src={etkIcon} alt="etk-icon" height={30} width={30} />
           <div className="">Elite Team Killerz</div>
         </div>
       </Link>
+      <div className="space-x-6">
+        <Link href={"/brackets"}>Brackets</Link>
+        <Link href={"/about"}>About</Link>
+      </div>
     </nav>
   );
 }

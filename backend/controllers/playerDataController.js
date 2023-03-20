@@ -1,26 +1,32 @@
-const mongoose = require('mongoose')
-require('dotenv').config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 async function getAllData(req, res) {
   try {
     // const usernames = await getUsernames()
-    const getData = await mongoose.connection.db.collection('dxpresults').find().toArray()
+    const getData = await mongoose.connection.db
+      .collection("dxpresults2")
+      .find()
+      .toArray();
     // savePipelineResults(usernames)
-    res.status(200).json({ data: getData })
+    res.status(200).json({ data: getData });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
 // Retrieve individual player data from db
 async function getSingleData(req, res) {
-  const { id } = req.params
+  const { id } = req.params;
 
-  const player = await mongoose.connection.db.collection('dxpresults').find({ _id: id }).toArray()
+  const player = await mongoose.connection.db
+    .collection("dxpresults2")
+    .find({ _id: id })
+    .toArray();
   if (!player) {
-    return res.status(404).json({ error: "No such player" })
+    return res.status(404).json({ error: "No such player" });
   }
-  res.status(200).json(player)
+  res.status(200).json(player);
 }
 
 // function authMiddleware(req, res, next) {
@@ -36,4 +42,4 @@ module.exports = {
   getAllData,
   getSingleData,
   // authMiddleware
-}
+};

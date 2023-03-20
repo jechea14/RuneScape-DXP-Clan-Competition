@@ -1,4 +1,6 @@
 import React from "react";
+import { skillIcons } from "@/utils/misc";
+import Image from "next/image";
 
 export default function Player({ playerData }) {
   return (
@@ -11,17 +13,26 @@ export default function Player({ playerData }) {
           <thead>
             <tr className="bg-[#111111]">
               <td></td>
-              <td>Current Xp</td>
+              <td>Current XP</td>
               <td>XP Gained</td>
               <td>DXP Comp</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Overall</td>
+              <td className="flex items-center space-x-2">
+                {" "}
+                <Image
+                  src={skillIcons[0]}
+                  width={20}
+                  height={20}
+                  alt="overall-icon"
+                />
+                Overall
+              </td>
               <td></td>
               <td></td>
-              <td className="text-right text-green-600 font-semibold">
+              <td className="text-right text-green-600 font-medium">
                 {Intl.NumberFormat("en-US").format(playerData[0].dxpComptotal)}
               </td>
             </tr>
@@ -33,13 +44,21 @@ export default function Player({ playerData }) {
                 keyName.charAt(0).toUpperCase() + keyName.slice(1);
               return (
                 <tr key={keyIndex} className="even:bg-[#111111]">
-                  <td>{capitalizedSkill}</td>
+                  <td className="flex items-center space-x-2">
+                    <Image
+                      src={skillIcons[keyIndex + 1]}
+                      width={20}
+                      height={20}
+                      alt={`${keyName}-icon`}
+                    />
+                    {capitalizedSkill}
+                  </td>
                   <td className="text-right">
                     {Intl.NumberFormat("en-US").format(
                       playerData[0].latestXp[keyName]
                     )}
                   </td>
-                  <td className="text-green-600 font-semibold text-right">
+                  <td className="text-green-600 font-medium text-right">
                     {Intl.NumberFormat("en-US").format(
                       playerData[0].xpDeltas[keyName]
                     )}
