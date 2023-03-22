@@ -73,8 +73,6 @@ async function getPlayerData(usernames) {
         if (splitPlayerData[i].split(",")[2] === "-1")
           splitPlayerData[i].split(",")[2] = parseInt(0);
         skillData[skills[i]] = parseInt(splitPlayerData[i + 1].split(",")[2]);
-
-        // skillData.set(skills[i], parseInt(splitPlayerData[i + 1].split(',')[2]))
       }
       const username = player;
       etkData.push({
@@ -98,9 +96,12 @@ async function savePipelineResults(usernames) {
         .collection("snapshots2")
         .aggregate(pipeline(user))
         .toArray();
+      // skips if array is empty, means no data for user
       if (result.length === 0) {
         continue;
-      } else {
+      }
+      // finds existing data for user then updates it, creates new document for user if user does not exist
+      else {
         const existingResult = await PlayerResults.findOne({
           _id: result[0]._id,
         });
@@ -126,6 +127,7 @@ async function cleanData() {
     const usernames = await getUsernames();
     const data = await getPlayerData(usernames);
 
+    // creates player data then saves into db collection
     Players.create(data)
       .then()
       .catch((err) => {

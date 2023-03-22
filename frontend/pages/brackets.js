@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import BracketTable from "@/components/BracketTable";
 
 function brackets({ sortData }) {
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
@@ -25,14 +26,31 @@ function brackets({ sortData }) {
   );
   const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2851);
 
-  return <div>brackets</div>;
+  return (
+    <main>
+      <h2>Brackets</h2>
+      <div className="flex flex-col items-center">
+        {sortData && (
+          <div className="">
+            <BracketTable bracketName={"Bracket A"} arr={bracketA} />
+            <BracketTable bracketName={"Bracket B"} arr={bracketB} />
+            <BracketTable bracketName={"Bracket C"} arr={bracketC} />
+            <BracketTable bracketName={"Bracket D"} arr={bracketD} />
+            <BracketTable bracketName={"Bracket E"} arr={bracketE} />
+            <BracketTable bracketName={"Bracket F"} arr={bracketF} />
+            <BracketTable bracketName={"Bracket G"} arr={bracketG} />
+          </div>
+        )}
+      </div>
+    </main>
+  );
 }
 
 export async function getServerSideProps() {
   const res = await axios.get("http://localhost:3000/api/data/");
-  const sortData = await res.data.data
-    .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
-    .filter((user) => user.dxpComptotal > 0);
+  const sortData = await res.data.data.sort(
+    (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
+  );
   return { props: { sortData } };
 }
 
