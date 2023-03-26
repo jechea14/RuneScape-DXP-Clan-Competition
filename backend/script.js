@@ -48,6 +48,11 @@ async function fetchPlayerData(player) {
   return response.data;
 }
 
+async function fetchAvatarPicture(player) {
+  const response = await axios.get(`http://secure.runescape.com/m=avatar-rs/${player}/chat.png`)
+  return response.data;
+}
+
 async function getUsernames() {
   const usernames = [];
   const data = await fetchClan();
