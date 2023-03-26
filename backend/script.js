@@ -2,6 +2,7 @@ const { Players, PlayerResults } = require("./models/clanDataModel");
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
+const { BSON } = require('bson')
 
 const skills = [
   "attack",
@@ -49,7 +50,9 @@ async function fetchPlayerData(player) {
 }
 
 async function fetchAvatarPicture(player) {
-  const response = await axios.get(`http://secure.runescape.com/m=avatar-rs/${player}/chat.png`)
+  const response = await axios.get(`http://secure.runescape.com/m=avatar-rs/${player}/chat.png`, {
+    responseType: 'arraybuffer'
+  })
   return response.data;
 }
 
