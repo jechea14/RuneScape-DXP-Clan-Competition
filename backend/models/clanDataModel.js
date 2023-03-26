@@ -157,10 +157,9 @@ const playerDataSchema = new Schema(
       type: Number,
       required: true,
     },
-    avatarPicture: {
-      filename: String,
-      data: Binary,
-      contentType: String
+    avatar: {
+      data: Buffer,
+      contentType: String,
     },
     skillXP: [skillSchema],
   },

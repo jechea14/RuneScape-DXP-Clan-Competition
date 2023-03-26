@@ -2,7 +2,7 @@ const { Players, PlayerResults } = require("./models/clanDataModel");
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
-const { BSON } = require('bson')
+const { BSON } = require("bson");
 
 const skills = [
   "attack",
@@ -50,10 +50,17 @@ async function fetchPlayerData(player) {
 }
 
 async function fetchAvatarPicture(player) {
-  const response = await axios.get(`http://secure.runescape.com/m=avatar-rs/${player}/chat.png`, {
-    responseType: 'arraybuffer'
-  })
-  return response.data;
+  try {
+    const response = await axios.get(
+      `http://secure.runescape.com/m=avatar-rs/${player}/chat.png`,
+      {
+        responseType: "arraybuffer",
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function getUsernames() {
@@ -69,13 +76,14 @@ async function getUsernames() {
 
 async function getPlayerData(usernames) {
   const etkData = [];
-  for (player of usernames) {
+  for (let player of usernames) {
     try {
       console.log(player + " - hiscores");
       const playerData = await fetchPlayerData(player);
       const splitPlayerData = playerData.split("\n");
       const total_level = parseInt(splitPlayerData[0].split(",")[1]);
       const skillData = {};
+      const avatarPicture = await fetchAvatarPicture(player);
       for (let i = 0; i < skills.length; i++) {
         // splitPlayerData: skill, rank, experience
         if (splitPlayerData[i].split(",")[2] === "-1")
@@ -86,13 +94,16 @@ async function getPlayerData(usernames) {
       etkData.push({
         username,
         total_level,
+        avatar: {
+          data: avatarPicture,
+          contentType: "image/png",
+        },
         skillXP: [skillData],
       });
     } catch (error) {
       console.log(`Not found in hiscores`);
     }
   }
-  // console.log(etkData)
   return etkData;
 }
 
@@ -134,7 +145,7 @@ async function cleanData() {
   try {
     const usernames = await getUsernames();
     const data = await getPlayerData(usernames);
-
+    // await getPlayerData(usernames);
     // creates player data then saves into db collection
     Players.create(data)
       .then()
