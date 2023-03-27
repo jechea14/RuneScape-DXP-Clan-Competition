@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import Table from "../components/Table";
 
 export default function Home({ sortData }) {
@@ -31,22 +32,56 @@ export default function Home({ sortData }) {
   // if (error) return <div>Error {error}</div>;
 
   return (
-    <main>
-      <h2>DXP Competition</h2>
-      <div className="flex flex-col items-center">
-        {sortData && (
-          <div className="">
-            <Table bracketName={"Bracket A"} arr={bracketA} />
-            <Table bracketName={"Bracket B"} arr={bracketB} />
-            <Table bracketName={"Bracket C"} arr={bracketC} />
-            <Table bracketName={"Bracket D"} arr={bracketD} />
-            <Table bracketName={"Bracket E"} arr={bracketE} />
-            <Table bracketName={"Bracket F"} arr={bracketF} />
-            <Table bracketName={"Bracket G"} arr={bracketG} />
-          </div>
-        )}
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Elite Team Killerz</title>
+      </Head>
+      <main>
+        <h2>DXP Competition</h2>
+        <div className="flex flex-col items-center">
+          {sortData && (
+            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
+              <div className="h-full ">
+                <Table bracketName={"Bracket A: <=2k Total"} arr={bracketA} />
+              </div>
+              <div className="h-full">
+                <Table
+                  bracketName={"Bracket B: 2001 - 2.3k Total"}
+                  arr={bracketB}
+                />
+              </div>
+              <div className="h-full">
+                <Table
+                  bracketName={"Bracket C: 2301 - 2.6k Total"}
+                  arr={bracketC}
+                />
+              </div>
+              <div className="h-full">
+                <Table
+                  bracketName={"Bracket D: 2601 - 2.7k Total"}
+                  arr={bracketD}
+                />
+              </div>
+              <div className="h-full">
+                <Table
+                  bracketName={"Bracket E: 2701 - 2.8k Total"}
+                  arr={bracketE}
+                />
+              </div>
+              <div className="h-full">
+                <Table
+                  bracketName={"Bracket F: 2801 - 2850 Total"}
+                  arr={bracketF}
+                />
+              </div>
+              <div className="h-full">
+                <Table bracketName={"Bracket G: 2851+ Total"} arr={bracketG} />
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+    </>
   );
 }
 

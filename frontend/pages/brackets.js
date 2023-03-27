@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import BracketTable from "@/components/BracketTable";
+import Head from "next/head";
 
 function brackets({ sortData }) {
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
@@ -27,22 +28,62 @@ function brackets({ sortData }) {
   const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2851);
 
   return (
-    <main>
-      <h2>Brackets</h2>
-      <div className="flex flex-col items-center">
-        {sortData && (
-          <div className="">
-            <BracketTable bracketName={"Bracket A"} arr={bracketA} />
-            <BracketTable bracketName={"Bracket B"} arr={bracketB} />
-            <BracketTable bracketName={"Bracket C"} arr={bracketC} />
-            <BracketTable bracketName={"Bracket D"} arr={bracketD} />
-            <BracketTable bracketName={"Bracket E"} arr={bracketE} />
-            <BracketTable bracketName={"Bracket F"} arr={bracketF} />
-            <BracketTable bracketName={"Bracket G"} arr={bracketG} />
-          </div>
-        )}
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Brackets - Elite Team Killerz</title>
+      </Head>
+      <main>
+        <h2>Brackets</h2>
+        <div className="flex flex-col items-center">
+          {sortData && (
+            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket A: <=2k Total"}
+                  arr={bracketA}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket B: 2001 - 2.3k Total"}
+                  arr={bracketB}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket C: 2301 - 2.6k Total"}
+                  arr={bracketC}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket D: 2601 - 2.7k Total"}
+                  arr={bracketD}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket E: 2701 - 2.8k Total"}
+                  arr={bracketE}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket F: 2801 - 2850 Total"}
+                  arr={bracketF}
+                />
+              </div>
+              <div className="h-full">
+                <BracketTable
+                  bracketName={"Bracket G: 2851+ Total"}
+                  arr={bracketG}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
+    </>
   );
 }
 

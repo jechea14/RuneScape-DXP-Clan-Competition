@@ -126,6 +126,10 @@ const dxpResultSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    avatar: {
+      data: Buffer,
+      contentType: String,
+    },
     xpDeltas: {
       type: skillSchema,
       required: true,

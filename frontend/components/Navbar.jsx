@@ -8,12 +8,19 @@ function Navbar() {
       <Link href={"/"}>
         <div className="flex items-center">
           <Image src={etkIcon} alt="etk-icon" height={30} width={30} />
-          <div className="">Elite Team Killerz</div>
+          <div className="font-semibold hover:text-[#bd93f9] transition">
+            Elite Team Killerz
+          </div>
         </div>
       </Link>
-      <div className="space-x-6">
-        <Link href={"/brackets"}>Brackets</Link>
-        <Link href={"/about"}>About</Link>
+      <div className="space-x-6 flex font-semibold">
+        <Link href={"/brackets"}>
+          {" "}
+          <div className="hover:text-[#bd93f9] transition">Brackets</div>
+        </Link>
+        <Link href={"/about"}>
+          <div className="hover:text-[#bd93f9] transition">About</div>
+        </Link>
       </div>
     </nav>
   );

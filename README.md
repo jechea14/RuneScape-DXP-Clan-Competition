@@ -4,7 +4,7 @@
 
 Frontend:
 
-- React.js
+- Next.js
 
 Backend & API:
 
@@ -13,8 +13,3 @@ Backend & API:
 - ODM: Mongoose
 - Database: MongoDB
 - Cronjobs
-
-## TODO:
-
-- Figure out requirements on stack
-- Figure out steps needed on the backend

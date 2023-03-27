@@ -14,7 +14,7 @@ module.exports = function (username) {
     },
     {
       $group: {
-        _id: username,
+        _id: "$username",
         oldestDoc: {
           $first: "$$ROOT",
         },
@@ -26,7 +26,9 @@ module.exports = function (username) {
     {
       $project: {
         username: 1,
+        _id: "$_id",
         totalLevel: "$oldestDoc.total_level",
+        avatar: "$latestDoc.avatar",
         oldestSkillXP: {
           $arrayElemAt: ["$oldestDoc.skillXP", 0],
         },
@@ -37,7 +39,9 @@ module.exports = function (username) {
     },
     {
       $project: {
+        _id: "$_id",
         totalLevel: "$totalLevel",
+        avatar: "$avatar",
         latestXp: "$latestSkillXP",
         attackDiff: {
           $subtract: ["$latestSkillXP.attack", "$oldestSkillXP.attack"],
@@ -145,8 +149,9 @@ module.exports = function (username) {
     },
     {
       $project: {
-        _id: username,
+        _id: "$_id",
         totalLevel: "$totalLevel",
+        avatar: "$avatar",
         latestXp: "$latestXp",
         attackResult: {
           $multiply: ["$attackDiff", 0.5],
@@ -266,7 +271,9 @@ module.exports = function (username) {
     },
     {
       $project: {
+        _id: "$_id",
         totalLevelBeforeDxp: "$totalLevel",
+        avatar: "$avatar",
         xpDeltas: "$xpDeltas",
         latestXp: "$latestXp",
         dxpCompResults: {
