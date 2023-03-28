@@ -4,7 +4,7 @@ import etkIcon from "../public/images/ETK_transparent.png";
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between bg-[#111111] space-x-2 p-2">
+    <nav className="flex sticky top-0 items-center justify-between bg-[#111111] space-x-2 p-2">
       <Link href={"/"}>
         <div className="flex items-center">
           <Image src={etkIcon} alt="etk-icon" height={30} width={30} />

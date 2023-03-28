@@ -17,7 +17,7 @@ function BracketTable({ bracketName, arr }) {
               return (
                 <tr key={userArr._id} className="odd:bg-[#111111]">
                   <td className="flex items-center p-2 hover:underline">
-                    <Avatar data={userArr} />
+                    <Avatar data={userArr} width={30} height={30} />
                     <Link href={`/player/${userArr._id}`}>{userArr._id}</Link>
                   </td>
 
