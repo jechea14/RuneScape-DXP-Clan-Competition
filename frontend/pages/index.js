@@ -37,11 +37,11 @@ export default function Home({ sortData }) {
         <title>Elite Team Killerz</title>
       </Head>
       <main>
-        <h2>DXP Competition</h2>
+        <h1 className="text-4xl">DXP Competition</h1>
         <div className="flex flex-col items-center">
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
-              <div className="h-full ">
+              <div className="h-full">
                 <Table bracketName={"Bracket A: <=2k Total"} arr={bracketA} />
               </div>
               <div className="h-full">
