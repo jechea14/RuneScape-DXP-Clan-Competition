@@ -1,5 +1,5 @@
 import React from "react";
-import { skillIcons } from "@/utils/misc";
+import { skillIcons, skillModifiers } from "@/utils/misc";
 import Image from "next/image";
 import Head from "next/head";
 import Avatar from "@/components/Avatar";
@@ -20,14 +20,15 @@ export default function Player({ playerData }) {
             <thead>
               <tr className="bg-[#111111]">
                 <td></td>
-                <td className="w-28 text-right p-2">Current XP</td>
-                <td className="w-28 text-right">XP Gained</td>
-                <td className="w-28 text-right">DXP Comp</td>
+                <td className="w-28 text-sm text-right p-2">Current XP</td>
+                <td className="w-28 text-sm text-right">XP Gained</td>
+                <td className="w-32 text-sm text-right">Comp Modifier</td>
+                <td className="w-28 text-sm text-right">DXP Comp</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="flex items-center space-x-2 pl-1">
+                <td className="flex items-center space-x-2 p-1">
                   {" "}
                   <Image
                     src={skillIcons[0]}
@@ -37,6 +38,7 @@ export default function Player({ playerData }) {
                   />
                   <p>Overall</p>
                 </td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td className="text-right text-green-600 font-medium p-1">
@@ -71,6 +73,9 @@ export default function Player({ playerData }) {
                       {Intl.NumberFormat("en-US").format(
                         playerData[0].xpDeltas[keyName]
                       )}
+                    </td>
+                    <td className="font-medium text-right">
+                      x{skillModifiers[keyIndex]}
                     </td>
                     <td className="text-right pr-1">
                       {Intl.NumberFormat("en-US").format(

@@ -37,7 +37,7 @@ export default function Home({ sortData }) {
         <title>Elite Team Killerz</title>
       </Head>
       <main>
-        <h1 className="text-4xl">DXP Competition</h1>
+        <h1 className="text-2xl">DXP Competition</h1>
         <div className="flex flex-col items-center">
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">

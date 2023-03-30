@@ -29,3 +29,34 @@ export const skillIcons = [
   "/images/icons/Invention-icon.webp", //Invention
   "/images/icons/Archaeology-icon.webp", //Archaeology
 ];
+
+export const skillModifiers = [
+  0.5, //Attack
+  0.5, //Defence
+  0.5, //Strength
+  0.5, //Constitution
+  0.5, //Ranged
+  2, //Prayer
+  0.5, //Magic
+  2, //Cooking
+  3, //Woodcutting
+  1, //Fletching
+  3, //Fishing
+  2, //Firemaking
+  1, //Crafting
+  2, //Smithing
+  3, //Mining
+  0.5, //Herblore
+  3, //Agility
+  1, //Thieving
+  2, //Slayer
+  0.5, //Farming
+  3, //Runecrafting
+  2, //Hunter
+  2, //Construction
+  0.5, //Summoning
+  0.5, //Dungeoneering
+  3, //Divination
+  0.5, //Invention
+  0.5, //Archaeology
+];
