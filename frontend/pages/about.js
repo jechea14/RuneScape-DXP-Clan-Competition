@@ -7,6 +7,9 @@ function about() {
       <Head>
         <title>About - Elite Team Killerz</title>
       </Head>
+      <main>
+        <h1>Rules</h1>
+      </main>
     </>
   );
 }

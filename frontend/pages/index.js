@@ -86,7 +86,7 @@ export default function Home({ sortData }) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get("http://localhost:3000/api/data/");
+  const res = await axios.get("http://localhost:4000/api/data/");
   const sortData = await res.data.data
     .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
     .filter((user) => user.dxpComptotal > 0);
