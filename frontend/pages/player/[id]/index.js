@@ -95,7 +95,7 @@ export default function Player({ playerData }) {
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `http://localhost:4000/api/data/player/${context.params.id}`
+    `http://localhost:3000/api/data/player/${context.params.id}`
   );
   const playerData = await res.json();
   return {

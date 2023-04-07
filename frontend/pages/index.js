@@ -37,8 +37,8 @@ export default function Home({ sortData }) {
         <title>Elite Team Killerz</title>
       </Head>
       <main>
-        <h1 className="text-2xl">DXP Competition</h1>
         <div className="flex flex-col items-center">
+          <h1 className="text-2xl p-6">DXP Competition</h1>
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">
@@ -86,7 +86,7 @@ export default function Home({ sortData }) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get("http://localhost:4000/api/data/");
+  const res = await axios.get("http://localhost:3000/api/data/");
   const sortData = await res.data.data
     .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
     .filter((user) => user.dxpComptotal > 0);
