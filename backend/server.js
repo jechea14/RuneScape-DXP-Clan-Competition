@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const playerData = require("./routes/data");
 const cron = require("node-cron");
+const moment = require("moment-timezone");
 const { cleanData } = require("./script.js");
 
 // Connect to db
@@ -15,10 +16,18 @@ mongoose
     // Listen for requests
     app.listen(process.env.PORT, () => {
       console.log("connected to db & listening on port", process.env.PORT);
-      // cron.schedule("*/5 * * * *", () => {
-      //   console.log("running cron job...");
-      //   cleanData();
-      // });
+      const startTime = moment.tz("2023-04-08 04:00:00", "America/Los_Angeles");
+      const endTime = moment.tz("2023-04-09 04:00:00", "America/Los_Angeles");
+      const cronSchedule = "0 */4 * * *"; // run every 4 hours
+      const job = cron.schedule(cronSchedule, () => {
+        const currentTime = moment.tz("America/Los_Angeles");
+        if (currentTime.isBetween(startTime, endTime)) {
+          console.log("running cron job...");
+          cleanData();
+        } else {
+          job.stop();
+        }
+      });
     });
   })
   .catch((err) => console.log(err, "error"));
