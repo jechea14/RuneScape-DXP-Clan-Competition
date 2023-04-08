@@ -28,6 +28,7 @@ mongoose
           job.stop();
         }
       });
+      job.start();
     });
   })
   .catch((err) => console.log(err, "error"));
