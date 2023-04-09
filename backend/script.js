@@ -68,7 +68,7 @@ async function getUsernames() {
   const data = await fetchClan();
   const splitData = data.split("\n");
   for (let i = 1; i < splitData.length; i++) {
-    usernames.push(splitData[i].split(",")[0].replaceAll("�", " "));
+    usernames.push(splitData[i].split(",")[0].replace(/�/g, " "));
   }
   // console.log(usernames)
   return usernames;
