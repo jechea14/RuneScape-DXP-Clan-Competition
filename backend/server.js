@@ -7,6 +7,7 @@ const playerData = require("./routes/data");
 const cron = require("node-cron");
 const moment = require("moment-timezone");
 const { cleanData } = require("./script.js");
+const http = require("http");
 
 // Connect to db
 // async task
@@ -15,15 +16,19 @@ mongoose
   .then(() => {
     // Listen for requests
     app.listen(process.env.PORT, () => {
+      cron.schedule("*/14 * * * *", () => {
+        http.get("https://etk-double-xp.onrender.com");
+      });
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz("2023-04-08 04:00:00", "America/Los_Angeles");
-      const endTime = moment.tz("2023-04-09 04:00:00", "America/Los_Angeles");
+      const endTime = moment.tz("2023-04-10 04:00:00", "America/Los_Angeles");
       const cronSchedule = "0 */4 * * *"; // run every 4 hours
       const job = cron.schedule(cronSchedule, () => {
         const currentTime = moment.tz("America/Los_Angeles");
         if (currentTime.isBetween(startTime, endTime)) {
           console.log("running cron job...");
           cleanData();
+          console.log("cron job completed");
         } else {
           job.stop();
         }
