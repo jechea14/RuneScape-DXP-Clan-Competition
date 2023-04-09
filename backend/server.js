@@ -16,7 +16,7 @@ mongoose
   .then(() => {
     // Listen for requests
     app.listen(process.env.PORT, () => {
-      cron.schedule("*/14 * * * *", () => {
+      cron.schedule("*/10 * * * *", () => {
         console.log(".");
         http.get("https://etk-double-xp.onrender.com");
       });
