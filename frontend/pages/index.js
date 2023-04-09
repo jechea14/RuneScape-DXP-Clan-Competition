@@ -87,7 +87,7 @@ export default function Home({ sortData }) {
 
 export async function getServerSideProps() {
   try {
-    const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
+    const res = await axios.get("https://tired-wig-tuna.cyclic.app/api/data/");
     const sortData = await res.data.data
       .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
       .filter((user) => user.dxpComptotal > 0);
