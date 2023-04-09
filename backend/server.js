@@ -17,6 +17,7 @@ mongoose
     // Listen for requests
     app.listen(process.env.PORT, () => {
       cron.schedule("*/14 * * * *", () => {
+        console.log(".");
         http.get("https://etk-double-xp.onrender.com");
       });
       console.log("connected to db & listening on port", process.env.PORT);
