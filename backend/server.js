@@ -15,7 +15,7 @@ mongoose
   .connect(process.env.DATABASE_CONNECTION, { useUnifiedTopology: true })
   .then(() => {
     // Listen for requests
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 3000, () => {
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz("2023-04-08 04:00:00", "America/Los_Angeles");
       const endTime = moment.tz("2023-04-10 04:00:00", "America/Los_Angeles");
