@@ -89,7 +89,7 @@ function brackets({ sortData }) {
 
 export async function getServerSideProps() {
   const res = await fetch("https://etk-double-xp.onrender.com/api/data/");
-  const sortData = await res.data.sort(
+  const sortData = await res.data?.sort(
     (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
   );
   return { props: { sortData } };

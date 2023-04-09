@@ -4,7 +4,7 @@ import Table from "../components/Table";
 
 export default function Home({ sortData }) {
   // const { isLoading, error, data } = useQuery("data", fetchData);
-
+  console.log(sortData);
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
     (user) =>
