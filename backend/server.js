@@ -16,10 +16,6 @@ mongoose
   .then(() => {
     // Listen for requests
     app.listen(process.env.PORT, () => {
-      cron.schedule("*/10 * * * *", () => {
-        console.log(".");
-        http.get("https://etk-double-xp.onrender.com");
-      });
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz("2023-04-08 04:00:00", "America/Los_Angeles");
       const endTime = moment.tz("2023-04-10 04:00:00", "America/Los_Angeles");
