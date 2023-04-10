@@ -16,10 +16,6 @@ mongoose
   .then(() => {
     // Listen for requests
     app.listen(process.env.PORT || 3000, () => {
-      cron.schedule("*/5 * * * *", () => {
-        console.log(".");
-        http.get("https://tired-wig-tuna.cyclic.app/");
-      });
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz("2023-04-08 04:00:00", "America/Los_Angeles");
       const endTime = moment.tz("2023-04-10 10:00:00", "America/Los_Angeles");
@@ -64,3 +60,6 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/api/data", playerData);
+app.use("/", (req, res) => {
+  res.status(200).json({ message: "/" });
+});

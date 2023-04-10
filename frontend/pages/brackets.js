@@ -88,7 +88,7 @@ function brackets({ sortData }) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get("https://tired-wig-tuna.cyclic.app/api/data/");
+  const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
   const sortData = await res.data.data.sort(
     (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
   );
