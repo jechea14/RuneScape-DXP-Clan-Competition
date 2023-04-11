@@ -74,6 +74,7 @@ async function getUsernames() {
   return usernames;
 }
 
+// Fetch player data from rs API then clean data for name, total, avatar, skill xp
 async function getPlayerData(usernames) {
   const etkData = [];
   for (let player of usernames) {
