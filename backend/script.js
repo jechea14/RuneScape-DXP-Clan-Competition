@@ -35,6 +35,7 @@ const skills = [
   "archaeology",
 ];
 
+// Fetch clan from RuneScape API
 async function fetchClan() {
   const response = await axios.get(
     "http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=elite%20team%20killerz"
@@ -42,6 +43,7 @@ async function fetchClan() {
   return response.data;
 }
 
+// Fetch individual player data from RuneScape API
 async function fetchPlayerData(player) {
   const response = await axios.get(
     `https://secure.runescape.com/m=hiscore/index_lite.ws?player=${player}`
@@ -49,6 +51,7 @@ async function fetchPlayerData(player) {
   return response.data;
 }
 
+// Fetch avatar picture from RuneScape API
 async function fetchAvatarPicture(player) {
   try {
     const response = await axios.get(
@@ -63,6 +66,7 @@ async function fetchAvatarPicture(player) {
   }
 }
 
+// Fetch usernames from clan, clean data to only get usernames
 async function getUsernames() {
   const usernames = [];
   const data = await fetchClan();
@@ -142,11 +146,12 @@ async function savePipelineResults(usernames) {
   }
 }
 
+// Fetch usernames, get and clean data, create Player models with data,
+// save pipeline results of each username and respective data
 async function cleanData() {
   try {
     const usernames = await getUsernames();
     const data = await getPlayerData(usernames);
-    // await getPlayerData(usernames);
     // creates player data then saves into db collection
     Players.create(data)
       .then()

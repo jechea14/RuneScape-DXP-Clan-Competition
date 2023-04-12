@@ -7,7 +7,6 @@ const playerData = require("./routes/data");
 const cron = require("node-cron");
 const moment = require("moment-timezone");
 const { cleanData } = require("./script.js");
-const http = require("http");
 
 // Connect to db
 // async task
