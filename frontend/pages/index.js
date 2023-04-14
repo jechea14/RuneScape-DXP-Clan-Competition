@@ -1,8 +1,10 @@
+import { useState } from "react";
 import axios from "axios";
 import Head from "next/head";
 import Table from "../components/Table";
 
 export default function Home({ sortData }) {
+  const [isLoading, setIsLoading] = useState(false);
   // const { isLoading, error, data } = useQuery("data", fetchData);
   console.log(sortData);
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
@@ -28,7 +30,7 @@ export default function Home({ sortData }) {
   );
   const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2851);
 
-  // if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
   // if (error) return <div>Error {error}</div>;
 
   return (
