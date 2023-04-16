@@ -4,8 +4,8 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
   }
   
   html {
@@ -13,6 +13,7 @@
   }
   
 html, body {
-    background-color: #1e1f21;
-    color: #999999;
+  @apply bg-slate-900 text-gray-100;
+    /* background-color: #1e1f21;
+    color: #999999; */
 }

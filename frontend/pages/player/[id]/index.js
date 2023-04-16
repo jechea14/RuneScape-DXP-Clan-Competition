@@ -18,7 +18,7 @@ export default function Player({ playerData }) {
         <div className="flex flex-col items-center">
           <table>
             <thead>
-              <tr className="bg-[#111111]">
+              <tr className="bg-slate-700">
                 <td></td>
                 <td className="w-28 text-sm text-right p-2">Current XP</td>
                 <td className="w-28 text-sm text-right">XP Gained</td>
@@ -54,7 +54,7 @@ export default function Player({ playerData }) {
                 const capitalizedSkill =
                   keyName.charAt(0).toUpperCase() + keyName.slice(1);
                 return (
-                  <tr key={keyIndex} className="even:bg-[#111111] ">
+                  <tr key={keyIndex} className="even:bg-slate-800">
                     <td className="flex items-center space-x-2 p-1">
                       <Image
                         src={skillIcons[keyIndex + 1]}

@@ -1,12 +1,31 @@
 import { useState } from "react";
 import axios from "axios";
+import useSWR from "swr";
 import Head from "next/head";
 import Table from "../components/Table";
 
-export default function Home({ sortData }) {
-  const [isLoading, setIsLoading] = useState(false);
-  // const { isLoading, error, data } = useQuery("data", fetchData);
-  console.log(sortData);
+export const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+  return data;
+};
+
+export default function Home() {
+  const { data, error, isLoading } = useSWR(
+    `https://etk-double-xp.onrender.com/api/data/`,
+    fetcher
+  );
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
+  const sortData = data.data
+    .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
+    .filter((user) => user.dxpComptotal > 0);
+
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
     (user) =>
@@ -29,9 +48,6 @@ export default function Home({ sortData }) {
       user.totalLevelBeforeDxp >= 2801 && user.totalLevelBeforeDxp <= 2850
   );
   const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2851);
-
-  if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>Error {error}</div>;
 
   return (
     <>
@@ -85,16 +101,4 @@ export default function Home({ sortData }) {
       </main>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  try {
-    const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
-    const sortData = await res.data.data
-      .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
-      .filter((user) => user.dxpComptotal > 0);
-    return { props: { sortData } };
-  } catch (err) {
-    console.log(err);
-  }
 }

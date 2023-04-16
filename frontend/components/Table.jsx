@@ -8,7 +8,7 @@ function Table({ bracketName, arr }) {
       <h2 className="font-bold">{bracketName}</h2>
       <table>
         <tbody className="">
-          <tr className="bg-[#111111]">
+          <tr className="bg-slate-700">
             <th className="p-3">#</th>
             <th className="text-left w-52">Name</th>
             <th className="text-right pr-2">DXP Competition</th>
@@ -17,7 +17,7 @@ function Table({ bracketName, arr }) {
             arr.map((userArr, counter) => {
               counter += 1;
               return (
-                <tr key={userArr._id} className="odd:bg-[#111111]">
+                <tr key={userArr._id} className="odd:bg-slate-800">
                   <td className="text-center">{counter}</td>
 
                   <td className="flex items-center py-2 hover:underline space-x-1">
