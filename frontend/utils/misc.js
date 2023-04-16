@@ -60,3 +60,13 @@ export const skillModifiers = [
   0.5, //Invention
   0.5, //Archaeology
 ];
+
+export const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+  return data;
+};

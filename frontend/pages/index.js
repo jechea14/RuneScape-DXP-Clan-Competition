@@ -1,25 +1,15 @@
-import { useState } from "react";
-import axios from "axios";
 import useSWR from "swr";
 import Head from "next/head";
 import Table from "../components/Table";
-
-export const fetcher = async (url) => {
-  const res = await fetch(url);
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-};
+import { fetcher } from "@/utils/misc";
+import Spinner from "@/components/Spinner";
 
 export default function Home() {
   const { data, error, isLoading } = useSWR(
     `https://etk-double-xp.onrender.com/api/data/`,
     fetcher
   );
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Spinner />;
   if (error) return <div>{error.message}</div>;
 
   const sortData = data.data

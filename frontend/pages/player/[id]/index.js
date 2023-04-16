@@ -3,19 +3,40 @@ import { skillIcons, skillModifiers } from "@/utils/misc";
 import Image from "next/image";
 import Head from "next/head";
 import Avatar from "@/components/Avatar";
+import useSWR from "swr";
+import { useRouter } from "next/router";
+import { fetcher } from "@/utils/misc";
+import { Spinner } from "@chakra-ui/react";
 
-export default function Player({ playerData }) {
+export default function Player() {
+  const router = useRouter();
+  const playerId = router.query.id;
+  const { data, error, isLoading } = useSWR(
+    playerId ? (
+      `https://etk-double-xp.onrender.com/api/data/player/${playerId}`
+    ) : (
+      <Spinner />
+    ),
+    fetcher
+  );
+  if (isLoading) return <Spinner />;
+  if (error) return <div>{error.message}</div>;
+
+  if (!data) {
+    return null;
+  }
+
   return (
     <>
       <Head>
-        <title>{playerData[0]._id} - Elite Team Killerz</title>
+        <title>{data[0]._id} - Elite Team Killerz</title>
       </Head>
-      <main>
+      <main className="flex flex-col items-center">
         <div className="flex items-center">
-          <Avatar data={playerData[0]} width={65} height={70} />
-          <h1 className="text-lg font-bold">{playerData[0]._id}</h1>
+          <Avatar data={data[0]} width={65} height={70} />
+          <h1 className="text-lg font-bold">{data[0]._id}</h1>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="">
           <table>
             <thead>
               <tr className="bg-slate-700">
@@ -42,12 +63,10 @@ export default function Player({ playerData }) {
                 <td></td>
                 <td></td>
                 <td className="text-right text-green-600 font-medium p-1">
-                  {Intl.NumberFormat("en-US").format(
-                    playerData[0].dxpComptotal
-                  )}
+                  {Intl.NumberFormat("en-US").format(data[0].dxpComptotal)}
                 </td>
               </tr>
-              {Object.keys(playerData[0].latestXp).map((keyName, keyIndex) => {
+              {Object.keys(data[0].latestXp).map((keyName, keyIndex) => {
                 if (keyName === "_id") {
                   return null;
                 }
@@ -66,12 +85,12 @@ export default function Player({ playerData }) {
                     </td>
                     <td className="text-right">
                       {Intl.NumberFormat("en-US").format(
-                        playerData[0].latestXp[keyName]
+                        data[0].latestXp[keyName]
                       )}
                     </td>
                     <td className="text-green-600 font-medium text-right">
                       {Intl.NumberFormat("en-US").format(
-                        playerData[0].xpDeltas[keyName]
+                        data[0].xpDeltas[keyName]
                       )}
                     </td>
                     <td className="font-medium text-right">
@@ -79,7 +98,7 @@ export default function Player({ playerData }) {
                     </td>
                     <td className="text-right pr-1">
                       {Intl.NumberFormat("en-US").format(
-                        playerData[0].dxpCompResults[keyName]
+                        data[0].dxpCompResults[keyName]
                       )}
                     </td>
                   </tr>
@@ -93,14 +112,14 @@ export default function Player({ playerData }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const res = await fetch(
-    `https://etk-double-xp.onrender.com/api/data/player/${context.params.id}`
-  );
-  const playerData = await res.json();
-  return {
-    props: {
-      playerData,
-    },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const res = await fetch(
+//     `https://etk-double-xp.onrender.com/api/data/player/${context.params.id}`
+//   );
+//   const playerData = await res.json();
+//   return {
+//     props: {
+//       playerData,
+//     },
+//   };
+// }

@@ -1,9 +1,20 @@
 import React from "react";
-import axios from "axios";
 import BracketTable from "@/components/BracketTable";
 import Head from "next/head";
+import useSWR from "swr";
+import { fetcher } from "@/utils/misc";
+import Spinner from "@/components/Spinner";
 
-function brackets({ sortData }) {
+function brackets() {
+  const { data, error, isLoading } = useSWR(
+    `https://etk-double-xp.onrender.com/api/data/`,
+    fetcher
+  );
+  if (isLoading) return <Spinner />;
+  if (error) return <div>{error.message}</div>;
+
+  const sortData = data.data.sort((a, b) => b.dxpComptotal - a.dxpComptotal);
+
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
     (user) =>
@@ -87,12 +98,12 @@ function brackets({ sortData }) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
-  const sortData = await res.data.data.sort(
-    (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
-  );
-  return { props: { sortData } };
-}
+// export async function getServerSideProps() {
+//   const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
+//   const sortData = await res.data.data.sort(
+//     (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
+//   );
+//   return { props: { sortData } };
+// }
 
 export default brackets;
