@@ -171,6 +171,6 @@ const playerDataSchema = new Schema(
 );
 
 // Model : wrapper for collection
-const Players = mongoose.model("snapshots2", playerDataSchema);
-const PlayerResults = mongoose.model("DxpResults2", dxpResultSchema);
+const Players = mongoose.model("snapshotsMock", playerDataSchema);
+const PlayerResults = mongoose.model("DxpResultsMock", dxpResultSchema);
 module.exports = { Players, PlayerResults };
