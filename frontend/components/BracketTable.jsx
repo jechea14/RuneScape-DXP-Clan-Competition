@@ -29,8 +29,9 @@ function BracketTable({ bracketName, arr }) {
             })
           ) : (
             <tr>
-              <td></td>
-              <td colSpan={2}>No one</td>
+              <td colSpan={2} className="py-2">
+                No data available yet
+              </td>
             </tr>
           )}
         </tbody>

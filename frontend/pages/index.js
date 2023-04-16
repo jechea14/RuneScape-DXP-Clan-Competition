@@ -46,7 +46,9 @@ export default function Home() {
       </Head>
       <main>
         <div className="flex flex-col items-center">
-          <h1 className="text-2xl p-6">DXP Competition</h1>
+          <h1 className="text-2xl p-6">
+            Mock DXP Competition: Monday April 17 - Thursday April 27
+          </h1>
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">

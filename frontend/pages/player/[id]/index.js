@@ -6,7 +6,7 @@ import Avatar from "@/components/Avatar";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import { fetcher } from "@/utils/misc";
-import { Spinner } from "@chakra-ui/react";
+import Spinner from "@/components/Spinner";
 
 export default function Player() {
   const router = useRouter();
@@ -25,8 +25,6 @@ export default function Player() {
   if (!data) {
     return <Spinner />;
   }
-
-  const latestXpOverall = data[0].latestXp.reduce;
 
   return (
     <>
