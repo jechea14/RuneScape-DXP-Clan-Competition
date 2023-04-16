@@ -23,8 +23,10 @@ export default function Player() {
   if (error) return <div>{error.message}</div>;
 
   if (!data) {
-    return null;
+    return <Spinner />;
   }
+
+  const latestXpOverall = data[0].latestXp.reduce;
 
   return (
     <>

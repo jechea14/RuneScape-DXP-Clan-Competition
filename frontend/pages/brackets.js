@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
 
-function brackets() {
+function Brackets() {
   const { data, error, isLoading } = useSWR(
     `https://etk-double-xp.onrender.com/api/data/`,
     fetcher
@@ -106,4 +106,4 @@ function brackets() {
 //   return { props: { sortData } };
 // }
 
-export default brackets;
+export default Brackets;
