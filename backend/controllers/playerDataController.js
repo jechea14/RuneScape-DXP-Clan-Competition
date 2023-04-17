@@ -5,7 +5,7 @@ async function getAllData(req, res) {
   try {
     // const usernames = await getUsernames()
     const getData = await mongoose.connection.db
-      .collection("DxpResultsMock")
+      .collection("DxpResultsMocks")
       .find()
       .toArray();
     // savePipelineResults(usernames)
@@ -20,7 +20,7 @@ async function getSingleData(req, res) {
   const { id } = req.params;
 
   const player = await mongoose.connection.db
-    .collection("DxpResultsMock")
+    .collection("DxpResultsMocks")
     .find({ _id: id })
     .toArray();
   if (!player) {
