@@ -43,9 +43,9 @@ function Brackets() {
       <Head>
         <title>Brackets - Elite Team Killerz</title>
       </Head>
-      <main>
-        <h2 className="text-2xl p-6">Brackets</h2>
-        <div className="flex flex-col items-center">
+      <main className="flex flex-col items-center">
+        <h1 className="text-2xl p-6">Brackets</h1>
+        <div>
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">
