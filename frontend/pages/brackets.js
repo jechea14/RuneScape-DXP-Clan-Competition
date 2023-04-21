@@ -13,7 +13,9 @@ function Brackets() {
   if (isLoading) return <Spinner />;
   if (error) return <div>{error.message}</div>;
 
-  const sortData = data.data.sort((a, b) => b.dxpComptotal - a.dxpComptotal);
+  const sortData = data.data.sort(
+    (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
+  );
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
