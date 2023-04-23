@@ -89,11 +89,11 @@ async function getPlayerData(usernames) {
       const total_level = parseInt(splitPlayerData[0].split(",")[1]);
       const skillData = {};
       const avatarPicture = await fetchAvatarPicture(player);
-      for (let i = 0; i < skills.length; i++) {
+      for (let i = 1; i < skills.length + 1; i++) {
         // splitPlayerData: skill, rank, experience
-        if (splitPlayerData[i].split(",")[2] === "-1")
-          splitPlayerData[i].split(",")[2] = parseInt(0);
-        skillData[skills[i]] = parseInt(splitPlayerData[i + 1].split(",")[2]);
+        let exp = splitPlayerData[i].split(",")[2];
+        if (exp === "-1") exp = parseInt(0);
+        skillData[skills[i - 1]] = parseInt(exp);
       }
       const username = player;
       etkData.push({
