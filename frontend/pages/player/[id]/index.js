@@ -75,28 +75,34 @@ export default function Player() {
                 return (
                   <tr key={keyIndex} className="even:bg-slate-800">
                     <td className="flex items-center space-x-2 p-1">
+                      {/* Skill Icon */}
                       <Image
                         src={skillIcons[keyIndex + 1]}
                         width={20}
                         height={20}
                         alt={`${keyName}-icon`}
                       />
+                      {/* Skill Name */}
                       <p>{capitalizedSkill}</p>
                     </td>
+                    {/* Current XP */}
                     <td className="text-right">
                       {Intl.NumberFormat("en-US").format(
                         data[0].latestXp[keyName]
                       )}
                     </td>
-                    <td className="text-green-600 font-medium text-right">
+                    {/* XP Gained */}
+                    <td className="text-blue-600 font-medium text-right">
                       {Intl.NumberFormat("en-US").format(
                         data[0].xpDeltas[keyName]
                       )}
                     </td>
+                    {/* Competition Modifiers */}
                     <td className="font-medium text-right">
                       x{skillModifiers[keyIndex]}
                     </td>
-                    <td className="text-right pr-1">
+                    {/* DXP Competition Results */}
+                    <td className="text-right pr-1 text-green-600">
                       {Intl.NumberFormat("en-US").format(
                         data[0].dxpCompResults[keyName]
                       )}
@@ -107,6 +113,7 @@ export default function Player() {
             </tbody>
           </table>
         </div>
+        <p className="text-sm">Note: If the current XP of a skill is 0, it means the RuneScape API does not record low xp values.</p>
       </main>
     </>
   );
