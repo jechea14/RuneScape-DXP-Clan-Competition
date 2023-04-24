@@ -100,12 +100,4 @@ function Brackets() {
   );
 }
 
-// export async function getServerSideProps() {
-//   const res = await axios.get("https://etk-double-xp.onrender.com/api/data/");
-//   const sortData = await res.data.data.sort(
-//     (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
-//   );
-//   return { props: { sortData } };
-// }
-
 export default Brackets;

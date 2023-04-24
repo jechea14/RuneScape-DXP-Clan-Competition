@@ -113,20 +113,11 @@ export default function Player() {
             </tbody>
           </table>
         </div>
-        <p className="text-sm">Note: If the current XP of a skill is 0, it means the RuneScape API does not record low xp values.</p>
+        <p className="text-sm">
+          Note: If the current XP of a skill is 0, it means the RuneScape API
+          does not record low xp values.
+        </p>
       </main>
     </>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   const res = await fetch(
-//     `https://etk-double-xp.onrender.com/api/data/player/${context.params.id}`
-//   );
-//   const playerData = await res.json();
-//   return {
-//     props: {
-//       playerData,
-//     },
-//   };
-// }
