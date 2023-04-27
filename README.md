@@ -1,6 +1,8 @@
 # RuneScape-DXP-Clan-Competition
 
-## Stack: MERN (Work in Progress)
+A RuneScape hiscores tracking and analysis website for a double experience competition of a RuneScape clan.
+
+## Stack: MERN
 
 Frontend:
 
