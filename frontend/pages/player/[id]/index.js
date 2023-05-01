@@ -36,12 +36,12 @@ export default function Player() {
           <Avatar data={data[0]} width={65} height={70} />
           <h1 className="text-lg font-bold">{data[0]._id}</h1>
         </div>
-        <div className="">
-          <table>
+        <div className="px-4">
+          <table className="overflow-x-auto">
             <thead>
               <tr className="bg-slate-700">
                 <td></td>
-                <td className="w-28 text-sm text-right p-2">Current XP</td>
+                <td className="w-28 text-sm text-right py-2">Current XP</td>
                 <td className="w-28 text-sm text-right">XP Gained</td>
                 <td className="w-32 text-sm text-right">Comp Modifier</td>
                 <td className="w-28 text-sm text-right">DXP Comp</td>
