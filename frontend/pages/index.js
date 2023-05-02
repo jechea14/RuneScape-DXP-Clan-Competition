@@ -49,6 +49,10 @@ export default function Home() {
           <h1 className="text-2xl p-6">
             Mock DXP Competition: Monday April 17 - Thursday April 27
           </h1>
+          <h1 className="text-xl p-6">
+            Upcoming: Double XP Competition Friday May 19 - Monday May 29
+          </h1>
+
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">
