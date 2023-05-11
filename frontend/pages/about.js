@@ -23,7 +23,7 @@ const markdown = `
   - Count as **2x**: hunter, fm, smithing, con, prayer, cooking, slayer
   - Count as **3x**: agility, div, fishing, woodcutting, mining, rc
 
-* Prize pool: TBD
+* Prize pool: 700m gp (Donations appreciated)
 
 * Prizes in gp: (May change during DXP as I see fit)
   * Prize distributions are based off previous DXPs of active players in each bracket.
