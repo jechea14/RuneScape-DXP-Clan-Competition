@@ -36,7 +36,7 @@ export default function Player() {
           <Avatar data={data[0]} width={65} height={70} />
           <h1 className="text-lg font-bold">{data[0]._id}</h1>
         </div>
-        <div className="px-4 overflow-x-auto w-full">
+        <div className="px-4 overflow-x-auto w-full flex justify-center">
           <table className="">
             <thead>
               <tr className="bg-slate-700">
