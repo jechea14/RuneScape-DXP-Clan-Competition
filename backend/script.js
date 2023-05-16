@@ -117,7 +117,7 @@ async function savePipelineResults(usernames) {
   try {
     for (let user of usernames) {
       const result = await mongoose.connection.db
-        .collection("snapshotsmocks")
+        .collection("snapshots-5-17-23")
         .aggregate(pipeline(user))
         .toArray();
       // skips if array is empty, means no data for user
