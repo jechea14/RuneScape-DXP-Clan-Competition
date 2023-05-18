@@ -46,9 +46,8 @@ export default function Home() {
       </Head>
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
-          <h1 className="text-2xl p-6">Test</h1>
-          <h1 className="text-xl p-6">
-            Upcoming: Double XP Competition Friday May 19 - Monday May 29
+          <h1 className="text-2xl p-6">
+            Double XP Competition Friday May 19 - Monday May 29
           </h1>
 
           {sortData && (
