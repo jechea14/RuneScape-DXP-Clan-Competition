@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import etkIcon from "../public/images/ETK_transparent.png";
-import { BsDiscord } from 'react-icons/bs'
+import { BsDiscord } from "react-icons/bs";
 
 function Navbar() {
   return (
@@ -21,7 +21,7 @@ function Navbar() {
             <div className="hover:text-[#bd93f9] transition">Brackets</div>
           </Link>
           <Link href={"/about"}>
-            <div className="hover:text-[#bd93f9] transition">About</div>
+            <div className="hover:text-[#bd93f9] transition">Rules</div>
           </Link>
           <Link href={"https://discord.com/invite/cwUpcX8bKw"} target="_blank">
             <div className="hover:text-[#bd93f9] transition">

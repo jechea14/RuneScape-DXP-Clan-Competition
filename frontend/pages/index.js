@@ -49,6 +49,7 @@ export default function Home() {
           <h1 className="text-2xl p-6">
             Double XP Competition Friday May 19 - Monday May 29
           </h1>
+          <h1 className="text-xl p-6">Updates every 4 hours</h1>
 
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">

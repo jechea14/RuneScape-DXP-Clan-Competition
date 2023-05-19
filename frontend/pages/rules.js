@@ -9,7 +9,7 @@ const markdown = `
 
 * Total Level Bracket System 
   -  If your total level reaches the bracket threshold during DXP, nothing changes. You stay in the bracket you were placed in.
-  -  A: <=2k 
+  -  A: <=2k
   -  B: 2001 - 2.3k
   -  C: 2301 - 2.6k
   -  D: 2601 - 2.7k
@@ -23,57 +23,53 @@ const markdown = `
   - Count as **2x**: hunter, fm, smithing, con, prayer, cooking, slayer
   - Count as **3x**: agility, div, fishing, woodcutting, mining, rc
 
-* Prize pool: 700m gp (Donations appreciated)
+* Prize pool: 735m gp
 
-* Prizes in gp: (May change during DXP as I see fit)
+* Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket.
 
-  - Bracket A = TBD
+  - Bracket A = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp
 
-  - Bracket B = TBD
+  - Bracket B = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp
 
-  - Bracket C = TBD
+  - Bracket C = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket D = TBD
+  - Bracket D = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket E = TBD
+  - Bracket E = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket F = TBD
+  - Bracket F = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp, 4th: 20m gp
 
-  - Bracket G = TBD
+  - Bracket G = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp, 4th: 20m gp
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.
   - No response = Disqualification (DQ).
   - There will be a DEADLINE to claim, if no one claims then the prizes will be donated to next DXP.
   - DQd winners will have their prizes donated to the next DXP competition as well.
-`
+`;
 
-function about() {
+function rules() {
   return (
     <>
       <Head>
-        <title>About - Elite Team Killerz</title>
+        <title>Rules - Elite Team Killerz</title>
       </Head>
       <main>
         <div className="flex flex-col justify-center items-center mx-auto prose text-slate-300">
-          <h1 className="text-2xl p-6 text-slate-300">
-              Rules
-          </h1>
+          <h1 className="text-2xl p-6 text-slate-300">Rules</h1>
 
           <section className="px-6 md:px-0">
             <div>
               <ReactMarkdown
-                components={
-                  {
-                    h2: ({children}) => (
-                      <h2 className="text-slate-300">{children}</h2>
-                    ),
-                    strong: ({children}) => (
-                      <strong className="text-slate-300">{children}</strong>
-                    ),
-                  }
-                }
+                components={{
+                  h2: ({ children }) => (
+                    <h2 className="text-slate-300">{children}</h2>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="text-slate-300">{children}</strong>
+                  ),
+                }}
               >
                 {markdown}
               </ReactMarkdown>
@@ -85,4 +81,4 @@ function about() {
   );
 }
 
-export default about;
+export default rules;
