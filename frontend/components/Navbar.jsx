@@ -16,13 +16,16 @@ function Navbar() {
           </div>
         </Link>
         <div className="space-x-6 flex font-semibold items-center">
+          {/* Brackets Link */}
           <Link href={"/brackets"}>
             {" "}
             <div className="hover:text-[#bd93f9] transition">Brackets</div>
           </Link>
+          {/* Rules Link */}
           <Link href={"/rules"}>
             <div className="hover:text-[#bd93f9] transition">Rules</div>
           </Link>
+          {/* Discord Link */}
           <Link href={"https://discord.com/invite/cwUpcX8bKw"} target="_blank">
             <div className="hover:text-[#bd93f9] transition">
               <BsDiscord size={22} />
