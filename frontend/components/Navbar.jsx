@@ -26,7 +26,7 @@ function Navbar() {
             <div className="hover:text-[#bd93f9] transition">Rules</div>
           </Link>
           {/* Discord Link */}
-          <Link href={"https://discord.com/invite/cwUpcX8bKw"} target="_blank">
+          <Link href={"https://discord.com/invite/gdKQjsYMDE"} target="_blank">
             <div className="hover:text-[#bd93f9] transition">
               <BsDiscord size={22} />
             </div>
