@@ -7,6 +7,7 @@ function Navbar() {
   return (
     <nav className="items-center bg-[#111111] space-x-2 p-2 px-6">
       <div className="flex items-center justify-between">
+        {/* Home */}
         <Link href={"/"}>
           <div className="flex items-center">
             <Image src={etkIcon} alt="etk-icon" height={30} width={30} />
