@@ -20,6 +20,7 @@ function Table({ bracketName, arr }) {
                 <tr key={userArr._id} className="odd:bg-slate-800">
                   <td className="text-center">{counter}</td>
 
+                  {/* Avatar Icon */}
                   <td className="flex items-center py-2 hover:underline space-x-1">
                     <Avatar data={userArr} width={30} height={30} />
                     <Link href={`/player/${userArr._id}`}>{userArr._id}</Link>
