@@ -92,7 +92,7 @@ export default function Player() {
                       )}
                     </td>
                     {/* XP Gained */}
-                    <td className="text-blue-600 font-medium text-right">
+                    <td className="text-blue-500 font-medium text-right">
                       {Intl.NumberFormat("en-US").format(
                         data[0].xpDeltas[keyName]
                       )}
