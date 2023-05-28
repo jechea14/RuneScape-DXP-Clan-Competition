@@ -10,8 +10,8 @@ function Table({ bracketName, arr }) {
         <tbody className="">
           <tr className="bg-slate-700">
             <th className="p-3">#</th>
-            <th className="text-left w-52">Name</th>
-            <th className="text-right pr-2">DXP Competition</th>
+            <th className="text-left w-52 pl-2">Name</th>
+            <th className="text-cetner pr-2">DXP Competition</th>
           </tr>
           {arr.length > 0 ? (
             arr.map((userArr, counter) => {
