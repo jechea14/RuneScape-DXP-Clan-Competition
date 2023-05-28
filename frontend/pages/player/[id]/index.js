@@ -43,8 +43,8 @@ export default function Player() {
                 <td></td>
                 <td className="w-28 text-sm text-right py-2">Current XP</td>
                 <td className="w-28 text-sm text-right">XP Gained</td>
-                <td className="w-32 text-sm text-right">Comp Modifier</td>
-                <td className="w-28 text-sm text-right">DXP Comp</td>
+                <td className="w-32 text-sm text-right">Competition Modifier</td>
+                <td className="w-32 text-sm text-right pr-2">DXP Competition</td>
               </tr>
             </thead>
             <tbody>
@@ -62,7 +62,7 @@ export default function Player() {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td className="text-right text-green-600 font-medium p-1">
+                <td className="text-right text-green-600 font-medium pr-2">
                   {Intl.NumberFormat("en-US").format(data[0].dxpComptotal)}
                 </td>
               </tr>
@@ -102,7 +102,7 @@ export default function Player() {
                       x{skillModifiers[keyIndex]}
                     </td>
                     {/* DXP Competition Results */}
-                    <td className="text-right pr-1 text-green-600">
+                    <td className="text-right pr-2 text-green-600">
                       {Intl.NumberFormat("en-US").format(
                         data[0].dxpCompResults[keyName]
                       )}
