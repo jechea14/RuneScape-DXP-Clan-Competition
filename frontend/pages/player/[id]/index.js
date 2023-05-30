@@ -43,8 +43,12 @@ export default function Player() {
                 <td></td>
                 <td className="w-28 text-sm text-right py-2">Current XP</td>
                 <td className="w-28 text-sm text-right">XP Gained</td>
-                <td className="w-32 text-sm text-right">Competition Modifier</td>
-                <td className="w-32 text-sm text-right pr-2">DXP Competition</td>
+                <td className="w-32 text-sm text-right">
+                  Competition Modifier
+                </td>
+                <td className="w-32 text-sm text-right pr-2">
+                  DXP Competition
+                </td>
               </tr>
             </thead>
             <tbody>
@@ -70,6 +74,7 @@ export default function Player() {
                 if (keyName === "_id") {
                   return null;
                 }
+                // Capitalizes first letter of skill
                 const capitalizedSkill =
                   keyName.charAt(0).toUpperCase() + keyName.slice(1);
                 return (
