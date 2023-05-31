@@ -20,7 +20,7 @@ function BracketTable({ bracketName, arr }) {
                     <Avatar data={userArr} width={30} height={30} />
                     <Link href={`/player/${userArr._id}`}>{userArr._id}</Link>
                   </td>
-
+                  {/* Total level */}
                   <td className="text-right pr-2">
                     {userArr.totalLevelBeforeDxp}
                   </td>
