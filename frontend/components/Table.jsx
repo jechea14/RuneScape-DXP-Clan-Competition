@@ -26,6 +26,7 @@ function Table({ bracketName, arr }) {
                     <Link href={`/player/${userArr._id}`}>{userArr._id}</Link>
                   </td>
 
+                  {/* DXP Comp Total */}
                   <td className="text-right pr-2">
                     {Intl.NumberFormat("en-US").format(userArr.dxpComptotal)}
                   </td>
