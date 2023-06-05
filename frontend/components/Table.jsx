@@ -18,6 +18,7 @@ function Table({ bracketName, arr }) {
               counter += 1;
               return (
                 <tr key={userArr._id} className="odd:bg-slate-800">
+                  {/* Rank */}
                   <td className="text-center">{counter}</td>
 
                   {/* Avatar Icon */}
