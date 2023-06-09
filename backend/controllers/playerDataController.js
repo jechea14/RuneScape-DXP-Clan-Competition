@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+// Retrieve all player data from db
 async function getAllData(req, res) {
   try {
     // const usernames = await getUsernames()
