@@ -5,16 +5,23 @@ import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
 
 export default function Home() {
-  const { data, error, isLoading } = useSWR(
+  const { data = {}, error, isLoading } = useSWR(
     `https://etk-double-xp.onrender.com/api/data/`,
     fetcher
   );
-  if (isLoading) return <Spinner />;
-  if (error) return <div>{error.message}</div>;
+  // if (isLoading) return <Spinner />;
+  // if (error) return <div>{error.message}</div>;
 
-  const sortData = data.data
-    .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
-    .filter((user) => user.dxpComptotal > 0);
+  // const sortData = data.data
+  //   .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
+  //   .filter((user) => user.dxpComptotal > 0);
+
+  let sortData = [];
+  if (data && data.data) {
+    sortData = data.data
+      .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
+      .filter((user) => user.dxpComptotal > 0);
+  }
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
@@ -50,6 +57,8 @@ export default function Home() {
             Double XP Competition Friday May 19 - Monday May 29
           </h1>
           <h1 className="text-xl p-6">Updates every 4 hours</h1>
+
+
 
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
@@ -92,6 +101,9 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {isLoading && <Spinner />}
+        {error && <div>{error.message}</div>}
       </main>
     </>
   );

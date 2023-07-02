@@ -3,7 +3,8 @@ import { Loader } from "@mantine/core";
 
 function Spinner() {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen space-y-3">
+      <h1> Server usage has been turned down to save usage time. Please wait... </h1>
       <Loader size="md" />
     </div>
   );

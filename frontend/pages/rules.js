@@ -3,6 +3,8 @@ import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 
 const markdown = `
+For July 28, 2023 DXP:
+
 * Ironmemes and HCIM can participate in the competition to win a Bond BUT they have to be 1st place in their respective brackets.
 * Alts: You can only pick either your main or one alt account to participate. Not both or else one will be disqualified.
 * ETK Discord only. Those who win in their bracket but is not in the discord is disqualified.
@@ -23,24 +25,24 @@ const markdown = `
   - Count as **2x**: hunter, fm, smithing, con, prayer, cooking, slayer
   - Count as **3x**: agility, div, fishing, woodcutting, mining, rc
 
-* Prize pool: 735m gp
+* Prize pool: 500m gp (Donations are appreciated)
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket.
 
-  - Bracket A = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp
+  - Bracket A = TBD
 
-  - Bracket B = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp
+  - Bracket B = TBD
 
-  - Bracket C = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
+  - Bracket C = TBD
 
-  - Bracket D = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
+  - Bracket D = TBD
 
-  - Bracket E = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp
+  - Bracket E = TBD
 
-  - Bracket F = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp, 4th: 20m gp
+  - Bracket F = TBD
 
-  - Bracket G = 1st: 50m gp (Bond for IM/HCIM), 2nd: 35m gp, 3rd: 20m gp, 4th: 20m gp
+  - Bracket G = TBD
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.
