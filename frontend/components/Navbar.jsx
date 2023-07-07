@@ -9,7 +9,7 @@ function Navbar() {
       <div className="flex items-center justify-between">
         {/* Home */}
         <Link href={"/"}>
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <Image src={etkIcon} alt="etk-icon" height={30} width={30} />
             <div className="font-semibold hover:text-[#bd93f9] transition">
               Elite Team Killerz
