@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Avatar from "./Avatar";
+import Spinner from "./Spinner";
 
 function Table({ bracketName, arr }) {
   return (

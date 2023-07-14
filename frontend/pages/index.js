@@ -60,26 +60,12 @@ export default function Home() {
           </h1>
           <h1 className="text-xl p-6">Updates every 4 hours</h1>
 
-          {/* <Suspense fallback={isLoading && <Spinner />}>
-            
-          </Suspense> */}
-
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">
                 <Table bracketName={"Bracket A: <=2k Total"} arr={bracketA} />
-                {/* <Suspense fallback={isLoading && <Spinner />}>
-                  {isLoading ? (
-                    <Spinner />
-                  ) : (
-                    <Table
-                      bracketName={"Bracket A: <=2k Total"}
-                      arr={bracketA}
-                    />
-                  )}
-                </Suspense> */}
               </div>
               <div className="h-full">
                 <Table
