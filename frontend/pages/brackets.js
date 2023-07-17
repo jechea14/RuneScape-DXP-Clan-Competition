@@ -10,12 +10,14 @@ function Brackets() {
     `https://etk-double-xp.onrender.com/api/data/`,
     fetcher
   );
-  if (isLoading) return <Spinner />;
-  if (error) return <div>{error.message}</div>;
 
-  const sortData = data.data.sort(
-    (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
-  );
+  let sortData = []
+  if (data && data.data) {
+    sortData = data.data.sort(
+      (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
+    );
+
+  }
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
@@ -48,6 +50,9 @@ function Brackets() {
       <main className="flex flex-col items-center">
         <h1 className="text-2xl p-6">Brackets - Total Levels at start of DXP</h1>
         <div>
+
+          {isLoading && <Spinner />}
+          {error && <div>{error.message}</div>}
           {sortData && (
             <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
               <div className="h-full">
