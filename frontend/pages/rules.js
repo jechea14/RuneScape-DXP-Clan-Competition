@@ -25,7 +25,7 @@ For July 28, 2023 DXP:
   - Count as **2x**: hunter, fm, smithing, con, prayer, cooking, slayer
   - Count as **3x**: agility, div, fishing, woodcutting, mining, rc
 
-* Prize pool: 500m gp (Donations are appreciated)
+* Prize pool: 700m gp = 500m base + 200m donation
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket.
