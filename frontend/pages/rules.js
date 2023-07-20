@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const markdown = `
 For July 28, 2023 DXP:
@@ -20,29 +21,30 @@ For July 28, 2023 DXP:
   -  G: 2851+
 
 * Skills
-  - Count as **0.5x**: attack, def, str, hp, mage, range, herb, summoning, farming, invention, arch, dung
-  - Count as **1x**:  thieve, craft, fletching
-  - Count as **2x**: hunter, fm, smithing, con, prayer, cooking, slayer
-  - Count as **3x**: agility, div, fishing, woodcutting, mining, rc
+  - Count as **0.5x**: Attack, Defense, Strength, Constition(hp), Magic, Range, Herblore, Summoning, Farming, Invention, Archaeology, Dungeoneering
+  - Count as **1x**:  Thieving, Crafting, Fletching
+  - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
+  - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
 * Prize pool: 700m gp = 500m base + 200m donation
 
 * Prizes in gp: (May change during DXP)
-  * Prize distributions are based off previous DXPs of active players in each bracket.
+  * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.
+  * Bond for Ironmen/Hardcore if placed 1st in respective bracket.
 
-  - Bracket A = TBD
+  - Bracket A = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
 
-  - Bracket B = TBD
+  - Bracket B = 1st: 50m gp
 
-  - Bracket C = TBD
+  - Bracket C = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
 
-  - Bracket D = TBD
+  - Bracket D = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
 
-  - Bracket E = TBD
+  - Bracket E = 1st: 50m gp, 2nd: 35m gp
 
-  - Bracket F = TBD
+  - Bracket F = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
 
-  - Bracket G = TBD
+  - Bracket G = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp, 4th: 15m gp
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.
@@ -72,8 +74,10 @@ function rules() {
                     <strong className="text-slate-300">{children}</strong>
                   ),
                 }}
+                remarkPlugins={[remarkGfm]}
               >
                 {markdown}
+
               </ReactMarkdown>
             </div>
           </section>

@@ -11,19 +11,10 @@ export default function Home() {
     error,
     isLoading,
   } = useSWR(`https://etk-double-xp.onrender.com/api/data/`, fetcher);
-  // if (isLoading) return <Spinner />;
-  // if (error) return <div>{error.message}</div>;
 
-  // const sortData = data.data
-  //   .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
-  //   .filter((user) => user.dxpComptotal > 0);
-
-  let sortData = [];
-  if (data && data.data) {
-    sortData = data.data
-      .sort((a, b) => b.dxpComptotal - a.dxpComptotal)
-      .filter((user) => user.dxpComptotal > 0);
-  }
+  const sortData = data?.data
+    ?.sort((a, b) => b.dxpComptotal - a.dxpComptotal)
+    .filter((user) => user.dxpComptotal > 0);
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(

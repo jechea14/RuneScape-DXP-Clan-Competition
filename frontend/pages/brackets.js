@@ -11,13 +11,9 @@ function Brackets() {
     fetcher
   );
 
-  let sortData = []
-  if (data && data.data) {
-    sortData = data.data.sort(
-      (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
-    );
-
-  }
+  const sortData = data?.data.sort(
+    (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
+  );
 
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2000);
   const bracketB = sortData?.filter(
