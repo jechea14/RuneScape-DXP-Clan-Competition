@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from "remark-gfm";
 
 const markdown = `
 For July 28, 2023 DXP:
@@ -22,7 +22,7 @@ For July 28, 2023 DXP:
 
 * Skills
   - Count as **0.5x**: Attack, Defense, Strength, Constition(hp), Magic, Range, Herblore, Summoning, Farming, Invention, Archaeology, Dungeoneering
-  - Count as **1x**:  Thieving, Crafting, Fletching
+  - Count as **1x**: Thieving, Crafting, Fletching
   - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
   - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
@@ -77,7 +77,6 @@ function rules() {
                 remarkPlugins={[remarkGfm]}
               >
                 {markdown}
-
               </ReactMarkdown>
             </div>
           </section>

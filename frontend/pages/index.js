@@ -50,6 +50,7 @@ export default function Home() {
             Double XP Competition Friday May 19 - Monday May 29
           </h1>
           <h1 className="text-xl p-6">Updates every 4 hours</h1>
+          <h1 className="text-xl p-6">DXP July 28th Coming Soon</h1>
 
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
