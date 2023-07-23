@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Reveal from "@/components/Reveal";
 
 const markdown = `
 For July 28, 2023 DXP:
@@ -62,24 +62,24 @@ function rules() {
       <main>
         <div className="flex flex-col justify-center items-center mx-auto prose text-slate-300">
           <h1 className="text-2xl p-6 text-slate-300">Rules</h1>
-
-          <section className="px-6 md:px-0">
-            <div>
-              <ReactMarkdown
-                components={{
-                  h2: ({ children }) => (
-                    <h2 className="text-slate-300">{children}</h2>
-                  ),
-                  strong: ({ children }) => (
-                    <strong className="text-slate-300">{children}</strong>
-                  ),
-                }}
-                remarkPlugins={[remarkGfm]}
-              >
-                {markdown}
-              </ReactMarkdown>
-            </div>
-          </section>
+          <Reveal>
+            <section className="px-6 md:px-0">
+              <div>
+                <ReactMarkdown
+                  components={{
+                    h2: ({ children }) => (
+                      <h2 className="text-slate-300">{children}</h2>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className="text-slate-300">{children}</strong>
+                    ),
+                  }}
+                >
+                  {markdown}
+                </ReactMarkdown>
+              </div>
+            </section>
+          </Reveal>
         </div>
       </main>
     </>

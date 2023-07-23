@@ -4,6 +4,7 @@ import Head from "next/head";
 import useSWR from "swr";
 import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
+import Reveal from "@/components/Reveal";
 
 function Brackets() {
   const { data, error, isLoading } = useSWR(
@@ -50,50 +51,53 @@ function Brackets() {
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
           {sortData && (
-            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket A: <=2k Total"}
-                  arr={bracketA}
-                />
+            <Reveal>
+
+              <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket A: <=2k Total"}
+                    arr={bracketA}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket B: 2001 - 2.3k Total"}
+                    arr={bracketB}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket C: 2301 - 2.6k Total"}
+                    arr={bracketC}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket D: 2601 - 2.7k Total"}
+                    arr={bracketD}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket E: 2701 - 2.8k Total"}
+                    arr={bracketE}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket F: 2801 - 2850 Total"}
+                    arr={bracketF}
+                  />
+                </div>
+                <div className="h-full">
+                  <BracketTable
+                    bracketName={"Bracket G: 2851+ Total"}
+                    arr={bracketG}
+                  />
+                </div>
               </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket B: 2001 - 2.3k Total"}
-                  arr={bracketB}
-                />
-              </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket C: 2301 - 2.6k Total"}
-                  arr={bracketC}
-                />
-              </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket D: 2601 - 2.7k Total"}
-                  arr={bracketD}
-                />
-              </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket E: 2701 - 2.8k Total"}
-                  arr={bracketE}
-                />
-              </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket F: 2801 - 2850 Total"}
-                  arr={bracketF}
-                />
-              </div>
-              <div className="h-full">
-                <BracketTable
-                  bracketName={"Bracket G: 2851+ Total"}
-                  arr={bracketG}
-                />
-              </div>
-            </div>
+            </Reveal>
           )}
         </div>
       </main>
