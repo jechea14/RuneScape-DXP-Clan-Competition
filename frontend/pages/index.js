@@ -47,10 +47,10 @@ export default function Home() {
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
           <h1 className="text-2xl p-6">
-            Double XP Competition Friday May 19 - Monday May 29
+            Double XP Competition Friday July 28th, 2023 - Monday August 7th,
+            2023
           </h1>
-          <h1 className="text-xl p-6">Updates every 4 hours</h1>
-          <h1 className="text-xl p-6">DXP July 28th Coming Soon</h1>
+          <h1 className="text-xl p-6">Updates every 2 hours</h1>
 
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
@@ -92,7 +92,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="h-full">
-                  <Table bracketName={"Bracket G: 2851+ Total"} arr={bracketG} />
+                  <Table
+                    bracketName={"Bracket G: 2851+ Total"}
+                    arr={bracketG}
+                  />
                 </div>
               </div>
             </Reveal>
