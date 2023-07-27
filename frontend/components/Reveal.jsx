@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from 'react'
-import { motion, useInView, useAnimation } from 'framer-motion'
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 function Reveal({ children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const mainControls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible")
+      mainControls.start("visible");
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
     <div ref={ref}>
@@ -26,7 +26,7 @@ function Reveal({ children }) {
         {children}
       </motion.div>
     </div>
-  )
+  );
 }
 
-export default Reveal
+export default Reveal;
