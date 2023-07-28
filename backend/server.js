@@ -18,8 +18,8 @@ mongoose
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz("2023-07-28 05:30:00", "America/Los_Angeles");
       const endTime = moment.tz("2023-08-07 05:30:00", "America/Los_Angeles");
-      const cronSchedule = "0 */2 * * *"; // run every 2 hours
-      // const cronSchedule = "*/10 * * * *"; // run every 10 mins
+      // const cronSchedule = "0 */2 * * *"; // run every 2 hours
+      const cronSchedule = "*/10 * * * *"; // run every 10 mins
       const job = cron.schedule(cronSchedule, () => {
         const currentTime = moment.tz("America/Los_Angeles");
         if (currentTime.isBetween(startTime, endTime)) {
