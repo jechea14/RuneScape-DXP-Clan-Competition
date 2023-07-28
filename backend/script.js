@@ -37,18 +37,26 @@ const skills = [
 
 // Fetch clan from RuneScape API
 async function fetchClan() {
-  const response = await axios.get(
-    "http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=elite%20team%20killerz"
-  );
-  return response.data;
+  try {
+    const response = await axios.get(
+      "http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=elite%20team%20killerz"
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // Fetch individual player data from RuneScape API
 async function fetchPlayerData(player) {
-  const response = await axios.get(
-    `https://secure.runescape.com/m=hiscore/index_lite.ws?player=${player}`
-  );
-  return response.data;
+  try {
+    const response = await axios.get(
+      `https://secure.runescape.com/m=hiscore/index_lite.ws?player=${player}`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // Fetch avatar picture from RuneScape API
