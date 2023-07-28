@@ -55,7 +55,7 @@ async function fetchPlayerData(player) {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log(`Unable to fetch ${player}`);
   }
 }
 
