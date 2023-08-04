@@ -2,7 +2,6 @@ const { Players, PlayerResults } = require("./models/clanDataModel");
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
-const { BSON } = require("bson");
 
 const skills = [
   "attack",
