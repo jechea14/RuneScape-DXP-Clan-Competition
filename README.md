@@ -25,3 +25,5 @@ Backend & API:
 - ODM: Mongoose
 - Database: MongoDB
 - Cronjobs
+
+- Note: May change database to Postgresql
