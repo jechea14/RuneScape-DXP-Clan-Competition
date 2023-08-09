@@ -32,6 +32,7 @@ const skills = [
   "divination",
   "invention",
   "archaeology",
+  "necromancy",
 ];
 
 // Fetch clan from RuneScape API

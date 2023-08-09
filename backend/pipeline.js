@@ -145,6 +145,9 @@ module.exports = function (username) {
             "$oldestSkillXP.archaeology",
           ],
         },
+        necromancyDiff: {
+          $subtract: ["$latestSkillXP.necromancy", "$oldestSkillXP.necromancy"],
+        },
       },
     },
     {
@@ -237,6 +240,9 @@ module.exports = function (username) {
         archaeologyResult: {
           $multiply: ["$archaeologyDiff", 0.5],
         },
+        necromancyResult: {
+          $multiply: ["$necromancyDiff", 1],
+        },
         xpDeltas: {
           attack: "$attackDiff",
           defence: "$defenceDiff",
@@ -266,6 +272,7 @@ module.exports = function (username) {
           divination: "$divinationDiff",
           invention: "$inventionDiff",
           archaeology: "$archaeologyDiff",
+          necromancy: "$necromancyDiff",
         },
       },
     },
@@ -305,6 +312,7 @@ module.exports = function (username) {
           divination: "$divinationResult",
           invention: "$inventionResult",
           archaeology: "$archaeologyResult",
+          necromancy: "$necromancyResult",
         },
         dxpComptotal: {
           $add: [
@@ -336,6 +344,7 @@ module.exports = function (username) {
             "$divinationResult",
             "$inventionResult",
             "$archaeologyResult",
+            "$necromancyResult",
           ],
         },
       },
