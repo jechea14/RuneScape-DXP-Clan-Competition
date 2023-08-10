@@ -28,6 +28,7 @@ export const skillIcons = [
   "/images/icons/Divination-icon.webp", //Divination
   "/images/icons/Invention-icon.webp", //Invention
   "/images/icons/Archaeology-icon.webp", //Archaeology
+  "/images/icons/Necromancy-icon.webp", //Archaeology
 ];
 
 export const skillModifiers = [
@@ -59,6 +60,7 @@ export const skillModifiers = [
   3, //Divination
   0.5, //Invention
   0.5, //Archaeology
+  1, //Necromancy
 ];
 
 export const fetcher = async (url) => {
