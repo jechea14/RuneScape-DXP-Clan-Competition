@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const RESULTS_COLLECTION = "dxpresults-5-19-23"
+const RESULTS_COLLECTION = "dxpresults-5-19-23";
 
 // Retrieve all player data from db
 async function getAllData(req, res) {
   try {
     // const usernames = await getUsernames()
     const getData = await mongoose.connection.db
-      .collection("dxpresults-7-28-23")
+      .collection(RESULTS_COLLECTION)
       .find()
       .toArray();
     // savePipelineResults(usernames)
@@ -23,7 +23,7 @@ async function getSingleData(req, res) {
   const { id } = req.params;
 
   const player = await mongoose.connection.db
-    .collection("dxpresults-7-28-23")
+    .collection(RESULTS_COLLECTION)
     .find({ _id: id })
     .toArray();
   if (!player) {

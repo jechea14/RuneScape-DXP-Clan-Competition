@@ -170,10 +170,10 @@ const playerDataSchema = new Schema(
   { timestamps: true }
 );
 
-const RESULTS_COLLECTION = "dxpresults-5-19-23"
-const SNAPSHOTS_COLLECTION = "snapshots-5-19-23"
+const RESULTS_COLLECTION = "dxpresults-5-19-23";
+const SNAPSHOTS_COLLECTION = "snapshots-5-19-23";
 
 // Model : wrapper for collection
-const Players = mongoose.model("snapshots-7-28-23", playerDataSchema);
-const PlayerResults = mongoose.model("dxpresults-7-28-23", dxpResultSchema);
+const Players = mongoose.model(SNAPSHOTS_COLLECTION, playerDataSchema);
+const PlayerResults = mongoose.model(RESULTS_COLLECTION, dxpResultSchema);
 module.exports = { Players, PlayerResults };

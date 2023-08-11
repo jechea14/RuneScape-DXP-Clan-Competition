@@ -120,11 +120,12 @@ async function getPlayerData(usernames) {
 }
 
 // Save pipeline results to a collection from the model. Update existing data or create data if data does not exist
+let SNAPSHOTS_COLLECTION = "snapshots-7-28-23";
 async function savePipelineResults(usernames) {
   try {
     for (let user of usernames) {
       const result = await mongoose.connection.db
-        .collection("snapshots-7-28-23")
+        .collection(SNAPSHOTS_COLLECTION)
         .aggregate(pipeline(user))
         .toArray();
       // skips if array is empty, means no data for user
