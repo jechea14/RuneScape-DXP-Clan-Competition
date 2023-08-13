@@ -170,8 +170,8 @@ const playerDataSchema = new Schema(
   { timestamps: true }
 );
 
-const RESULTS_COLLECTION = "dxpresults-5-19-23";
-const SNAPSHOTS_COLLECTION = "snapshots-5-19-23";
+const RESULTS_COLLECTION = "necrotestresults";
+const SNAPSHOTS_COLLECTION = "necrotestsnapshots";
 
 // Model : wrapper for collection
 const Players = mongoose.model(SNAPSHOTS_COLLECTION, playerDataSchema);
