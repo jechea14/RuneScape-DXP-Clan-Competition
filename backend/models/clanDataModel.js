@@ -114,6 +114,10 @@ const skillSchema = new Schema({
     type: Number,
     required: true,
   },
+  necromancy: {
+    type: Number,
+    required: true,
+  },
 });
 
 const dxpResultSchema = new mongoose.Schema(
