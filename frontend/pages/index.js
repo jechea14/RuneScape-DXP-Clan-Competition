@@ -51,6 +51,7 @@ export default function Home() {
             2023
           </h1>
           <h1 className="text-xl p-6">Updates every 2 hours</h1>
+          <h1 className="text-xl p-6">Testing Necromancy XP Gains</h1>
 
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
