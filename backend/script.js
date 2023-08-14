@@ -3,6 +3,8 @@ const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
 
+let SNAPSHOTS_COLLECTION = "necrotestsnapshots";
+
 const skills = [
   "attack",
   "defence",
@@ -120,7 +122,7 @@ async function getPlayerData(usernames) {
 }
 
 // Save pipeline results to a collection from the model. Update existing data or create data if data does not exist
-let SNAPSHOTS_COLLECTION = "snapshots-7-28-23";
+
 async function savePipelineResults(usernames) {
   try {
     for (let user of usernames) {
