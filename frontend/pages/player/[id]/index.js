@@ -99,7 +99,7 @@ export default function Player() {
                         )}
                       </td>
                       {/* XP Gained */}
-                      <td className="text-blue-500 font-medium text-right">
+                      <td className="text-blue-400 font-medium text-right">
                         {Intl.NumberFormat("en-US").format(
                           data[0].xpDeltas[keyName]
                         )}
@@ -109,7 +109,7 @@ export default function Player() {
                         x{skillModifiers[keyIndex]}
                       </td>
                       {/* DXP Competition Results */}
-                      <td className="text-right pr-2 text-green-600">
+                      <td className="text-right pr-2 text-green-500">
                         {Intl.NumberFormat("en-US").format(
                           data[0].dxpCompResults[keyName]
                         )}
@@ -120,7 +120,6 @@ export default function Player() {
               </tbody>
             </table>
           </div>
-
         </Reveal>
         <p className="text-sm">
           Note: If the current XP of a skill is 0, it means the RuneScape API
