@@ -26,4 +26,4 @@ Backend & API:
 - Database: MongoDB
 - Cronjobs
 
-- Note: May change database to Postgresql
+- Note: May change database to Postgresql or Mysql
