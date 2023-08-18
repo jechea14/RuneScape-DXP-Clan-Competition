@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// const RESULTS_COLLECTION = "dxpresults-5-19-23";
-const RESULTS_COLLECTION = "necrotestresults";
+const RESULTS_COLLECTION = process.env.RESULTS_COLLECTION;
 
 // Retrieve all player data from db
 async function getAllData(req, res) {

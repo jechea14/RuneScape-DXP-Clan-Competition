@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+require("dotenv").config();
 
 const skillSchema = new Schema({
   attack: {
@@ -174,10 +175,13 @@ const playerDataSchema = new Schema(
   { timestamps: true }
 );
 
-const RESULTS_COLLECTION = "necrotestresults";
-const SNAPSHOTS_COLLECTION = "necrotestsnapshots";
-
 // Model : wrapper for collection
-const Players = mongoose.model(SNAPSHOTS_COLLECTION, playerDataSchema);
-const PlayerResults = mongoose.model(RESULTS_COLLECTION, dxpResultSchema);
+const Players = mongoose.model(
+  process.env.SNAPSHOTS_COLLECTION,
+  playerDataSchema
+);
+const PlayerResults = mongoose.model(
+  process.env.RESULTS_COLLECTION,
+  dxpResultSchema
+);
 module.exports = { Players, PlayerResults };

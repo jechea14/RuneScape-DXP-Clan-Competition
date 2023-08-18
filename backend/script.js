@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Players, PlayerResults } = require("./models/clanDataModel");
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
@@ -127,7 +128,7 @@ async function savePipelineResults(usernames) {
   try {
     for (let user of usernames) {
       const result = await mongoose.connection.db
-        .collection(SNAPSHOTS_COLLECTION)
+        .collection(process.env.SNAPSHOTS_COLLECTION)
         .aggregate(pipeline(user))
         .toArray();
       // skips if array is empty, means no data for user
