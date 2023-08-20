@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-require("dotenv").config();
+const { RESULTS_COLLECTION, SNAPSHOTS_COLLECTION } = require("../misc.js")
 
 const skillSchema = new Schema({
   attack: {
@@ -177,11 +177,11 @@ const playerDataSchema = new Schema(
 
 // Model : wrapper for collection
 const Players = mongoose.model(
-  process.env.SNAPSHOTS_COLLECTION,
+  SNAPSHOTS_COLLECTION,
   playerDataSchema
 );
 const PlayerResults = mongoose.model(
-  process.env.RESULTS_COLLECTION,
+  RESULTS_COLLECTION,
   dxpResultSchema
 );
 module.exports = { Players, PlayerResults };

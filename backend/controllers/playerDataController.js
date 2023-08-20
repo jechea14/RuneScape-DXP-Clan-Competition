@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
-
-const RESULTS_COLLECTION = process.env.RESULTS_COLLECTION;
+const { RESULTS_COLLECTION } = require("../misc.js")
 
 // Retrieve all player data from db
 async function getAllData(req, res) {

@@ -1,10 +1,9 @@
 require("dotenv").config();
 const { Players, PlayerResults } = require("./models/clanDataModel");
+const { SNAPSHOTS_COLLECTION } = require("misc.js")
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
-
-let SNAPSHOTS_COLLECTION = "necrotestsnapshots";
 
 const skills = [
   "attack",
@@ -128,7 +127,7 @@ async function savePipelineResults(usernames) {
   try {
     for (let user of usernames) {
       const result = await mongoose.connection.db
-        .collection(process.env.SNAPSHOTS_COLLECTION)
+        .collection(SNAPSHOTS_COLLECTION)
         .aggregate(pipeline(user))
         .toArray();
       // skips if array is empty, means no data for user
