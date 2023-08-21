@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { Players, PlayerResults } = require("./models/clanDataModel");
-const { SNAPSHOTS_COLLECTION } = require("misc.js")
+const { SNAPSHOTS_COLLECTION } = require("./misc")
 const pipeline = require("./pipeline");
 const mongoose = require("mongoose");
 const axios = require("axios").default;
