@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { RESULTS_COLLECTION } = require("../misc.js")
+const { RESULTS_COLLECTION } = require("../misc.js");
 
 // Retrieve all player data from db
 async function getAllData(req, res) {
@@ -29,15 +29,6 @@ async function getSingleData(req, res) {
   }
   res.status(200).json(player);
 }
-
-// function authMiddleware(req, res, next) {
-//   const apiKeyHeader = req.headers['x-api-key']
-//   if (!apiKeyHeader || apiKeyHeader !== process.env.API_KEY) {
-//     console.log(apiKeyHeader, process.env.API_KEY)
-//     return res.status(401).send("401 unauthorized")
-//   }
-//   next()
-// }
 
 module.exports = {
   getAllData,
