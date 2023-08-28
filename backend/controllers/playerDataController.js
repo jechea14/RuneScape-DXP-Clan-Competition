@@ -33,5 +33,4 @@ async function getSingleData(req, res) {
 module.exports = {
   getAllData,
   getSingleData,
-  // authMiddleware
 };
