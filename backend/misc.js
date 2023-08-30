@@ -1,7 +1,9 @@
-const RESULTS_COLLECTION = "necrotestresults"
-const SNAPSHOTS_COLLECTION = "necrotestsnapshots"
+// Collection names in one place
+
+const RESULTS_COLLECTION = "necrotestresults";
+const SNAPSHOTS_COLLECTION = "necrotestsnapshots";
 
 module.exports = {
-    RESULTS_COLLECTION,
-    SNAPSHOTS_COLLECTION
-}
+  RESULTS_COLLECTION,
+  SNAPSHOTS_COLLECTION,
+};
