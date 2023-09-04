@@ -1,5 +1,4 @@
 // Collection names in one place
-
 const RESULTS_COLLECTION = "necrotestresults";
 const SNAPSHOTS_COLLECTION = "necrotestsnapshots";
 
