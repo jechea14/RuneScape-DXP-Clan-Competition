@@ -1,6 +1,6 @@
 // Collection names in one place
-const RESULTS_COLLECTION = "necrotestresults";
-const SNAPSHOTS_COLLECTION = "necrotestsnapshots";
+const RESULTS_COLLECTION = "dxpresults-7-28-23";
+const SNAPSHOTS_COLLECTION = "snapshots-7-28-23";
 
 module.exports = {
   RESULTS_COLLECTION,

@@ -46,12 +46,12 @@ export default function Home() {
       </Head>
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
-          {/* <h1 className="text-2xl p-6">
+          <h1 className="text-2xl p-6">
             Double XP Competition: Friday July 28th, 2023 - Monday August 7th,
             2023
           </h1>
-          <h1 className="text-xl p-6">Updates every 2 hours</h1> */}
-          <h1 className="text-2xl p-6">Testing Necromancy XP Gains</h1>
+          <h1 className="text-xl p-6">Updates every 2 hours</h1>
+          {/* <h1 className="text-2xl p-6">Testing Necromancy XP Gains</h1> */}
 
           {isLoading && <Spinner />}
           {error && <div>{error.message}</div>}
