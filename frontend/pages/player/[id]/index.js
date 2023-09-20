@@ -9,15 +9,14 @@ import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
 import Reveal from "@/components/Reveal";
 
+const DEV_HOST = `localhost:3000/api/data/player/${playerId}`;
+const API_HOST = `https://etk-double-xp.onrender.com/api/data/player/${playerId}`;
+
 export default function Player() {
   const router = useRouter();
   const playerId = router.query.id;
   const { data, error, isLoading } = useSWR(
-    playerId ? (
-      `https://etk-double-xp.onrender.com/api/data/player/${playerId}`
-    ) : (
-      <Spinner />
-    ),
+    playerId ? API_HOST : <Spinner />,
     fetcher
   );
   if (isLoading) return <Spinner />;

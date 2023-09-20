@@ -5,12 +5,11 @@ import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
 import Reveal from "@/components/Reveal";
 
+const DEV_HOST = "localhost:3000/api/data/";
+const API_HOST = "https://etk-double-xp.onrender.com/api/data/";
+
 export default function Home() {
-  const {
-    data = {},
-    error,
-    isLoading,
-  } = useSWR(`https://etk-double-xp.onrender.com/api/data/`, fetcher);
+  const { data = {}, error, isLoading } = useSWR(API_HOST, fetcher);
 
   const sortData = data?.data
     ?.sort((a, b) => b.dxpComptotal - a.dxpComptotal)
