@@ -4,6 +4,7 @@ import Table from "../components/Table";
 import { fetcher } from "@/utils/misc";
 import Spinner from "@/components/Spinner";
 import Reveal from "@/components/Reveal";
+import Countdown from "@/components/Countdown";
 
 const DEV_HOST = "localhost:3000/api/data/";
 const API_HOST = "https://etk-double-xp.onrender.com/api/data/";
@@ -49,6 +50,7 @@ export default function Home() {
             Double XP Competition: Friday July 28th, 2023 - Monday August 7th,
             2023
           </h1>
+          <Countdown />
           <h1 className="text-xl p-6">Updates every 2 hours</h1>
           {/* <h1 className="text-2xl p-6">Testing Necromancy XP Gains</h1> */}
 
