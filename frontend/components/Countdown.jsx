@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Countdown() {
-  const countDate = new Date("Nov 11, 2023 04:00:00").getTime();
+  const countDate = new Date("Nov 20, 2023 04:00:00").getTime();
   //   const now = new Date().getTime();
   //   const gap = countDate - now;
   const [gap, setGap] = useState(countDate - new Date().getTime());
