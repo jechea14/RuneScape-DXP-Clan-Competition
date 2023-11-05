@@ -241,7 +241,7 @@ module.exports = function (username) {
           $multiply: ["$archaeologyDiff", 0.5],
         },
         necromancyResult: {
-          $multiply: ["$necromancyDiff", 1],
+          $multiply: ["$necromancyDiff", 0.5],
         },
         xpDeltas: {
           attack: "$attackDiff",

@@ -16,8 +16,8 @@ mongoose
     // Listen for requests
     app.listen(process.env.PORT || 3000, () => {
       console.log("connected to db & listening on port", process.env.PORT);
-      const startTime = moment.tz("2023-08-13 05:00:00", "America/Los_Angeles");
-      const endTime = moment.tz("2023-08-14 05:30:00", "America/Los_Angeles");
+      const startTime = moment.tz("2023-11-10 04:00:00", "America/Los_Angeles");
+      const endTime = moment.tz("2023-11-20 04:30:00", "America/Los_Angeles");
       const cronSchedule = "0 */2 * * *"; // run every 2 hours
       // const cronSchedule = "*/10 * * * *"; // run every 10 mins
       const job = cron.schedule(cronSchedule, () => {
