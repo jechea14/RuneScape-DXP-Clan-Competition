@@ -4,9 +4,8 @@ import ReactMarkdown from "react-markdown";
 import Reveal from "@/components/Reveal";
 
 const markdown = `
-For July 28, 2023 DXP:
+For November 10, 2023 DXP:
 
-* Ironmemes and HCIM can participate in the competition to win a Bond BUT they have to be 1st place in their respective brackets.
 * Alts: You can only pick either your main or one alt account to participate. Not both or else one will be disqualified.
 * ETK Discord only. Those who win in their bracket but is not in the discord is disqualified.
 
@@ -21,30 +20,29 @@ For July 28, 2023 DXP:
   -  G: 2851+
 
 * Skills
-  - Count as **0.5x**: Attack, Defense, Strength, Constition(hp), Magic, Range, Herblore, Summoning, Farming, Invention, Archaeology, Dungeoneering
+  - Count as **0.5x**: Attack, Defense, Strength, Constition(hp), Magic, Range, Necromancy, Herblore, Summoning, Farming, Invention, Archaeology, Dungeoneering
   - Count as **1x**: Thieving, Crafting, Fletching
   - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
   - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
-* Prize pool: 700m gp = 500m base + 200m donation
+* Prize pool: 530m gp = 430m base + 100m donation
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.
-  * Bond for Ironmen/Hardcore if placed 1st in respective bracket.
 
-  - Bracket A = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
+  - Bracket A = 1st: 1st: 40m gp, 2nd: 25m gp
 
-  - Bracket B = 1st: 50m gp
+  - Bracket B = 1st: 1st: 40m gp, 2nd: 25m gp
 
-  - Bracket C = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
+  - Bracket C = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
 
-  - Bracket D = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
+  - Bracket D = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
 
-  - Bracket E = 1st: 50m gp, 2nd: 35m gp
+  - Bracket E = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
 
-  - Bracket F = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp
+  - Bracket F = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
 
-  - Bracket G = 1st: 50m gp, 2nd: 35m gp, 3rd 25m gp, 4th: 15m gp
+  - Bracket G = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.
