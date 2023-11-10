@@ -60,7 +60,7 @@ export const skillModifiers = [
   3, //Divination
   0.5, //Invention
   0.5, //Archaeology
-  1, //Necromancy
+  0.5, //Necromancy
 ];
 
 export const fetcher = async (url) => {
