@@ -40,6 +40,7 @@ export default function Player() {
           <div className="px-4 overflow-x-auto w-full flex justify-center">
             <table className="">
               <thead>
+                {/* Header */}
                 <tr className="bg-slate-700">
                   <td></td>
                   <td className="w-28 text-sm text-right py-2">Current XP</td>
@@ -53,6 +54,7 @@ export default function Player() {
                 </tr>
               </thead>
               <tbody>
+                {/* Overall Row */}
                 <tr>
                   <td className="flex items-center space-x-2 p-1">
                     {" "}
@@ -65,12 +67,14 @@ export default function Player() {
                     <p>Overall</p>
                   </td>
                   <td></td>
+                  {/* XP Gained */}
                   <td></td>
                   <td></td>
                   <td className="text-right text-green-600 font-medium pr-2">
                     {Intl.NumberFormat("en-US").format(data[0].dxpComptotal)}
                   </td>
                 </tr>
+                {/* Rest of the skill rows */}
                 {Object.keys(data[0].latestXp).map((keyName, keyIndex) => {
                   if (keyName === "_id") {
                     return null;

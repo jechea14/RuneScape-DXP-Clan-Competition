@@ -139,6 +139,14 @@ const dxpResultSchema = new mongoose.Schema(
       type: skillSchema,
       required: true,
     },
+    xpDeltasTotal: {
+      type: Number,
+      required: true
+    },
+    latestOverallXP: {
+      type: Number,
+      requireed: true,
+    },
     latestXp: {
       type: skillSchema,
       required: true,
@@ -165,6 +173,10 @@ const playerDataSchema = new Schema(
     total_level: {
       type: Number,
       required: true,
+    },
+    overallXp: {
+      type: Number,
+      required: true
     },
     avatar: {
       data: Buffer,

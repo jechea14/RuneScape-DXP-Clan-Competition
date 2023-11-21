@@ -28,6 +28,7 @@ module.exports = function (username) {
         username: 1,
         _id: "$_id",
         totalLevel: "$oldestDoc.total_level",
+        latestOverallXP: "$latestDoc.overallXp",
         avatar: "$latestDoc.avatar",
         oldestSkillXP: {
           $arrayElemAt: ["$oldestDoc.skillXP", 0],
@@ -41,6 +42,7 @@ module.exports = function (username) {
       $project: {
         _id: "$_id",
         totalLevel: "$totalLevel",
+        latestOverallXP: "$latestOverallXP",
         avatar: "$avatar",
         latestXp: "$latestSkillXP",
         attackDiff: {
@@ -154,6 +156,7 @@ module.exports = function (username) {
       $project: {
         _id: "$_id",
         totalLevel: "$totalLevel",
+        latestOverallXP: "$latestOverallXP",
         avatar: "$avatar",
         latestXp: "$latestXp",
         attackResult: {
@@ -274,6 +277,39 @@ module.exports = function (username) {
           archaeology: "$archaeologyDiff",
           necromancy: "$necromancyDiff",
         },
+        xpDeltasTotal: {
+          $add: [
+            "$attackDiff",
+            "$defenceDiff",
+            "$strengthDiff",
+            "$constitutionDiff",
+            "$rangedDiff",
+            "$prayerDiff",
+            "$magicDiff",
+            "$cookingDiff",
+            "$woodcuttingDiff",
+            "$fletchingDiff",
+            "$fishingDiff",
+            "$firemakingDiff",
+            "$craftingDiff",
+            "$smithingDiff",
+            "$miningDiff",
+            "$herbloreDiff",
+            "$agilityDiff",
+            "$thievingDiff",
+            "$slayerDiff",
+            "$farmingDiff",
+            "$runecraftingDiff",
+            "$hunterDiff",
+            "$constructionDiff",
+            "$summoningDiff",
+            "$dungeoneeringDiff",
+            "$divinationDiff",
+            "$inventionDiff",
+            "$archaeologyDiff",
+            "$necromancyDiff",
+          ]
+        }
       },
     },
     {
@@ -282,6 +318,8 @@ module.exports = function (username) {
         totalLevelBeforeDxp: "$totalLevel",
         avatar: "$avatar",
         xpDeltas: "$xpDeltas",
+        xpDeltasTotal: "$xpDeltasTotal",
+        latestOverallXP: "$latestOverallXP",
         latestXp: "$latestXp",
         dxpCompResults: {
           attack: "$attackResult",

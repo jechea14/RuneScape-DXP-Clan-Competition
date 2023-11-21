@@ -96,6 +96,7 @@ async function getPlayerData(usernames) {
       const playerData = await fetchPlayerData(player);
       const splitPlayerData = playerData.split("\n");
       const total_level = parseInt(splitPlayerData[0].split(",")[1]);
+      const overallXp = parseInt(splitPlayerData[0].split(",")[2])
       const skillData = {};
       const avatarPicture = await fetchAvatarPicture(player);
       for (let i = 1; i < skills.length + 1; i++) {
@@ -108,6 +109,7 @@ async function getPlayerData(usernames) {
       etkData.push({
         username,
         total_level,
+        overallXp,
         avatar: {
           data: avatarPicture,
           contentType: "image/png",
