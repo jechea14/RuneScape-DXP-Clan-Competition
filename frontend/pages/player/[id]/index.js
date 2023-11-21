@@ -66,9 +66,14 @@ export default function Player() {
                     />
                     <p>Overall</p>
                   </td>
-                  <td></td>
+                  {/* Current Overall XP */}
+                  <td className="text-right">
+                    {Intl.NumberFormat("en-US").format(data[0].latestOverallXP)}
+                  </td>
                   {/* XP Gained */}
-                  <td></td>
+                  <td className="text-right text-blue-400 font-medium">
+                    {Intl.NumberFormat("en-US").format(data[0].xpDeltasTotal)}
+                  </td>
                   <td></td>
                   <td className="text-right text-green-600 font-medium pr-2">
                     {Intl.NumberFormat("en-US").format(data[0].dxpComptotal)}
