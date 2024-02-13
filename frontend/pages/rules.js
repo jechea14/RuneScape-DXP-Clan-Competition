@@ -4,20 +4,20 @@ import ReactMarkdown from "react-markdown";
 import Reveal from "@/components/Reveal";
 
 const markdown = `
-For November 10, 2023 DXP:
+For February 16, 2024 - February 26, 2024 DXP:
 
 * Alts: You can only pick either your main or one alt account to participate. Not both or else one will be disqualified.
 * ETK Discord only. Those who win in their bracket but is not in the discord is disqualified.
 
 * Total Level Bracket System 
   -  If your total level reaches the bracket threshold during DXP, nothing changes. You stay in the bracket you were placed in.
-  -  A: <=2k
-  -  B: 2001 - 2.3k
-  -  C: 2301 - 2.6k
-  -  D: 2601 - 2.7k
-  -  E: 2701 - 2.8k
-  -  F: 2801 - 2850
-  -  G: 2851+
+  -  A: <= 2.1k
+  -  B: 2101 - 2.4k
+  -  C: 2401 - 2.7k
+  -  D: 2701 - 2.8k
+  -  E: 2801 - 2.9k
+  -  F: 2901 - 2950
+  -  G: 2951+
 
 * Skills
   - Count as **0.5x**: Attack, Defense, Strength, Constition(hp), Magic, Range, Necromancy, Herblore, Summoning, Farming, Invention, Archaeology, Dungeoneering
@@ -25,10 +25,12 @@ For November 10, 2023 DXP:
   - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
   - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
-* Prize pool: 530m gp = 430m base + 100m donation
+* Prize pool: 800m gp = 500m gp base + 100m gp donation from Ellie + 200m gp donation from Voidless (Donations are appreciated)
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.
+
+  - TBD
 
   - Bracket A = 1st: 1st: 40m gp, 2nd: 25m gp
 
