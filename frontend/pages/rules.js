@@ -30,21 +30,19 @@ For February 16, 2024 - February 26, 2024 DXP:
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.
 
-  - TBD
+  - Bracket A = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket A = 1st: 1st: 40m gp, 2nd: 25m gp
+  - Bracket B = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket B = 1st: 1st: 40m gp, 2nd: 25m gp
+  - Bracket C = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket C = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
+  - Bracket D = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
 
-  - Bracket D = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
+  - Bracket E = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp, 4th: 15m gp
 
-  - Bracket E = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
+  - Bracket F = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp, 4th: 15m gp
 
-  - Bracket F = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
-
-  - Bracket G = 1st: 40m gp, 2nd: 25m gp, 3rd: 15m gp
+  - Bracket G = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.
