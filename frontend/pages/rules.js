@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Reveal from "@/components/Reveal";
 
 const markdown = `
-For February 16, 2024 - February 26, 2024 DXP:
+For May 17, 2024 - May 27, 2024 DXP:
 
 * Alts: You can only pick either your main or one alt account to participate. Not both or else one will be disqualified.
 * ETK Discord only. Those who win in their bracket but is not in the discord is disqualified.
@@ -25,24 +25,12 @@ For February 16, 2024 - February 26, 2024 DXP:
   - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
   - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
-* Prize pool: 800m gp = 500m gp base + 100m gp donation from Ellie + 200m gp donation from Voidless (Donations are appreciated)
+* Prize pool: 690m gp (Donations are appreciated)
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.
 
-  - Bracket A = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
-
-  - Bracket B = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
-
-  - Bracket C = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
-
-  - Bracket D = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
-
-  - Bracket E = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp, 4th: 15m gp
-
-  - Bracket F = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp, 4th: 15m gp
-
-  - Bracket G = 1st: 55m gp, 2nd: 35m gp, 3rd: 20m gp
+TBD
 
 * Winners: 
   - Announced on the ETK discord. They have the option to KEEP or PASS their prize by dming IceKrystalx on discord or in runescape cc if she is on. Passing the prize donates it to the next DXP competition.

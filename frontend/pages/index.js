@@ -47,7 +47,7 @@ export default function Home() {
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
           <h1 className="text-2xl p-6">
-            Double XP Week: February 16th 2024 - February 26th 2024
+            Double XP Week: May 17th 2024 - May 27th 2024
           </h1>
           <Countdown />
           <h1 className="text-xl p-6">Updates every 2 hours</h1>
@@ -58,7 +58,10 @@ export default function Home() {
             <Reveal>
               <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
                 <div className="h-full">
-                  <Table bracketName={"Bracket A: <=2.1k Total"} arr={bracketA} />
+                  <Table
+                    bracketName={"Bracket A: <=2.1k Total"}
+                    arr={bracketA}
+                  />
                 </div>
 
                 <div className="h-full">
