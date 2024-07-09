@@ -14,7 +14,7 @@ html {
 
 html,
 body {
-  @apply bg-slate-900 text-gray-300;
+  @apply text-gray-300 bg-[#080b0e];
   font-family: Lexend, sans-serif;
   /* background-color: #1e1f21;
     color: #999999; */
