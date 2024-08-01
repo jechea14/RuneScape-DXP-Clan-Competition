@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Reveal from "@/components/Reveal";
 
 const markdown = `
-For May 17, 2024 - May 27, 2024 DXP:
+For August 2, 2024 - August 12, 2024 DXP:
 
 * Alts: You can only pick either your main or one alt account to participate. Not both or else one will be disqualified.
 * ETK Discord only. Those who win in their bracket but is not in the discord is disqualified.
@@ -25,7 +25,7 @@ For May 17, 2024 - May 27, 2024 DXP:
   - Count as **2x**: Hunter, Firemaking, Smithing, Construction, Prayer, Cooking, Slayer
   - Count as **3x**: Agility, Divination, Fishing, Woodcutting, Mining, Runecrafting
 
-* Prize pool: 690m gp (Donations are appreciated)
+* Prize pool: 720m gp (Donations are appreciated)
 
 * Prizes in gp: (May change during DXP)
   * Prize distributions are based off previous DXPs of active players in each bracket and may change depending on final results.

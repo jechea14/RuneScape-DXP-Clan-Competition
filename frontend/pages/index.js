@@ -47,7 +47,7 @@ export default function Home() {
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
           <h1 className="text-2xl p-6">
-            Double XP Week: May 17th 2024 - May 27th 2024
+            Double XP Week: August 2nd 2024 - August 12th 2024
           </h1>
           <Countdown />
           <h1 className="text-xl p-6">Updates every 2 hours</h1>
