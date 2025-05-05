@@ -160,25 +160,25 @@ module.exports = function (username) {
         avatar: "$avatar",
         latestXp: "$latestXp",
         attackResult: {
-          $multiply: ["$attackDiff", 0.5],
+          $multiply: ["$attackDiff", 1],
         },
         defenceResult: {
-          $multiply: ["$defenceDiff", 0.5],
+          $multiply: ["$defenceDiff", 1],
         },
         strengthResult: {
-          $multiply: ["$strengthDiff", 0.5],
+          $multiply: ["$strengthDiff", 1],
         },
         constitutionResult: {
-          $multiply: ["$constitutionDiff", 0.5],
+          $multiply: ["$constitutionDiff", 1],
         },
         rangedResult: {
-          $multiply: ["$rangedDiff", 0.5],
+          $multiply: ["$rangedDiff", 1],
         },
         prayerResult: {
           $multiply: ["$prayerDiff", 2],
         },
         magicResult: {
-          $multiply: ["$magicDiff", 0.5],
+          $multiply: ["$magicDiff", 1],
         },
         cookingResult: {
           $multiply: ["$cookingDiff", 2],
@@ -308,8 +308,8 @@ module.exports = function (username) {
             "$inventionDiff",
             "$archaeologyDiff",
             "$necromancyDiff",
-          ]
-        }
+          ],
+        },
       },
     },
     {

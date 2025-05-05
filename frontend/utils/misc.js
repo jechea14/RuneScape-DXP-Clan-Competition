@@ -32,13 +32,13 @@ export const skillIcons = [
 ];
 
 export const skillModifiers = [
-  0.5, //Attack
-  0.5, //Defence
-  0.5, //Strength
-  0.5, //Constitution
-  0.5, //Ranged
+  1, //Attack
+  1, //Defence
+  1, //Strength
+  1, //Constitution
+  1, //Ranged
   2, //Prayer
-  0.5, //Magic
+  1, //Magic
   2, //Cooking
   3, //Woodcutting
   1, //Fletching
