@@ -23,9 +23,9 @@ function Navbar() {
             <div className="hover:text-[#bd93f9] transition">Brackets</div>
           </Link>
           {/* Rules Link */}
-          <Link href={"/rules"}>
+          {/* <Link href={"/rules"}>
             <div className="hover:text-[#bd93f9] transition">Rules</div>
-          </Link>
+          </Link> */}
           {/* Discord Link */}
           <Link href={"https://discord.com/invite/gdKQjsYMDE"} target="_blank">
             <div className="hover:text-[#bd93f9] transition">
