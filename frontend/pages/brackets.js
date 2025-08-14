@@ -16,28 +16,25 @@ function Brackets() {
     (a, b) => a.totalLevelBeforeDxp - b.totalLevelBeforeDxp
   );
 
-  const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2100);
+  const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2400);
   const bracketB = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2101 && user.totalLevelBeforeDxp <= 2400
+      user.totalLevelBeforeDxp >= 2401 && user.totalLevelBeforeDxp <= 2800
   );
   const bracketC = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2401 && user.totalLevelBeforeDxp <= 2700
+      user.totalLevelBeforeDxp >= 2801 && user.totalLevelBeforeDxp <= 2950
   );
   const bracketD = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2701 && user.totalLevelBeforeDxp <= 2800
+      user.totalLevelBeforeDxp >= 2951 && user.totalLevelBeforeDxp <= 3500
   );
-  const bracketE = sortData?.filter(
-    (user) =>
-      user.totalLevelBeforeDxp >= 2801 && user.totalLevelBeforeDxp <= 2900
-  );
-  const bracketF = sortData?.filter(
-    (user) =>
-      user.totalLevelBeforeDxp >= 2901 && user.totalLevelBeforeDxp <= 2950
-  );
-  const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2951);
+  const bracketE = sortData?.filter((user) => user.totalLevelBeforeDxp >= 3501);
+  // const bracketF = sortData?.filter(
+  //   (user) =>
+  //     user.totalLevelBeforeDxp >= 2901 && user.totalLevelBeforeDxp <= 2950
+  // );
+  // const bracketG = sortData?.filter((user) => user.totalLevelBeforeDxp >= 2951);
 
   return (
     <>
@@ -56,35 +53,35 @@ function Brackets() {
               <div className="space-y-4 md:grid md:grid-cols-2 md:gap-5 lg:grid lg:grid-cols-3 xl:grid-cols-4">
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket A: <=2.1k Total"}
+                    bracketName={"Bracket A: <= 2.4k Total"}
                     arr={bracketA}
                   />
                 </div>
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket B: 2101 - 2.4k Total"}
+                    bracketName={"Bracket B: 2401 - 2.8k Total"}
                     arr={bracketB}
                   />
                 </div>
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket C: 2401 - 2.7k Total"}
+                    bracketName={"Bracket C: 2801 - 2950 Total"}
                     arr={bracketC}
                   />
                 </div>
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket D: 2701 - 2.8k Total"}
+                    bracketName={"Bracket D: 2901 - 3500 Total"}
                     arr={bracketD}
                   />
                 </div>
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket E: 2801 - 2.9k Total"}
+                    bracketName={"Bracket E: 3501+ Total"}
                     arr={bracketE}
                   />
                 </div>
-                <div className="h-full">
+                {/* <div className="h-full">
                   <BracketTable
                     bracketName={"Bracket F: 2901 - 2950 Total"}
                     arr={bracketF}
@@ -95,7 +92,7 @@ function Brackets() {
                     bracketName={"Bracket G: 2951+ Total"}
                     arr={bracketG}
                   />
-                </div>
+                </div> */}
               </div>
             </Reveal>
           )}
