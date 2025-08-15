@@ -75,13 +75,13 @@ export default function Home() {
                 </div>
                 <div className="h-full">
                   <Table
-                    bracketName={"Bracket D: 2901 - 3500 Total"}
+                    bracketName={"Bracket D: 2901 - 3050 Total"}
                     arr={bracketD}
                   />
                 </div>
                 <div className="h-full">
                   <Table
-                    bracketName={"Bracket E: 3501+ Total"}
+                    bracketName={"Bracket E: 3051+ Total"}
                     arr={bracketE}
                   />
                 </div>
