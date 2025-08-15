@@ -27,9 +27,9 @@ function Brackets() {
   );
   const bracketD = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2951 && user.totalLevelBeforeDxp <= 3500
+      user.totalLevelBeforeDxp >= 2951 && user.totalLevelBeforeDxp <= 3050
   );
-  const bracketE = sortData?.filter((user) => user.totalLevelBeforeDxp >= 3501);
+  const bracketE = sortData?.filter((user) => user.totalLevelBeforeDxp >= 3051);
   // const bracketF = sortData?.filter(
   //   (user) =>
   //     user.totalLevelBeforeDxp >= 2901 && user.totalLevelBeforeDxp <= 2950
