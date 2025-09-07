@@ -71,7 +71,7 @@ function Brackets() {
                 </div>
                 <div className="h-full">
                   <BracketTable
-                    bracketName={"Bracket D: 2901 - 3050 Total"}
+                    bracketName={"Bracket D: 2951 - 3050 Total"}
                     arr={bracketD}
                   />
                 </div>
