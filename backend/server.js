@@ -12,7 +12,10 @@ const { START_TIME, END_TIME } = require("./misc.js");
 // Connect to db
 // async task
 mongoose
-  .connect(process.env.DATABASE_CONNECTION, { useUnifiedTopology: true })
+  .connect(process.env.DATABASE_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     // Listen for requests
     app.listen(process.env.PORT || 3000, () => {
@@ -32,7 +35,7 @@ mongoose
       job.start();
     });
   })
-  .catch((err) => console.log(err, "error"));
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // Caching Middleware
 function setCache(req, res, next) {
