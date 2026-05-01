@@ -22,7 +22,7 @@ mongoose
       console.log("connected to db & listening on port", process.env.PORT);
       const startTime = moment.tz(START_TIME, "America/Los_Angeles");
       const endTime = moment.tz(END_TIME, "America/Los_Angeles");
-      const cronSchedule = "*/5 * * * *"; // run every 5 mins
+      const cronSchedule = "*/15 * * * *"; // run every 15 mins
       // const cronSchedule = "0 */2 * * *"; // run every 2 hours
       const job = cron.schedule(cronSchedule, () => {
         const currentTime = moment.tz("America/Los_Angeles");
