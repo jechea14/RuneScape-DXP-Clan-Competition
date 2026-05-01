@@ -23,22 +23,15 @@ mongoose
       const startTime = moment.tz(START_TIME, "America/Los_Angeles");
       const endTime = moment.tz(END_TIME, "America/Los_Angeles");
       const cronSchedule = "0 */2 * * *"; // run every 2 hours
-      const job = cron.schedule(
-        cronSchedule,
-        () => {
-          const currentTime = moment.tz("America/Los_Angeles");
-          if (currentTime.isBetween(startTime, endTime)) {
-            console.log("running cron job...");
-            cleanData();
-          } else {
-            job.stop();
-          }
-        },
-        {
-          scheduled: true,
-          timezone: "America/Los_Angeles",
-        },
-      );
+      const job = cron.schedule(cronSchedule, () => {
+        const currentTime = moment.tz("America/Los_Angeles");
+        if (currentTime.isBetween(startTime, endTime)) {
+          console.log("running cron job...");
+          cleanData();
+        } else {
+          job.stop();
+        }
+      });
       job.start();
     });
   })
