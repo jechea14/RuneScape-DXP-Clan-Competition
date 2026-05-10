@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Countdown() {
   // End date
-  const targetDate = new Date("2026-05-11T05:00:00").toLocaleString("en-US", {
-    timeZone: "America/Los_Angeles",
-  });
-
-  const countDate = new Date(targetDate).getTime();
+  const countDate = new Date("May 11, 2026 05:00:00").getTime();
   const [gap, setGap] = useState(countDate - new Date().getTime());
 
   useEffect(() => {
