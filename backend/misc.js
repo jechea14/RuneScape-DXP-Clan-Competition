@@ -1,8 +1,8 @@
 // Collection names in one place
-const RESULTS_COLLECTION = "dxpresults-5-1-26";
-const SNAPSHOTS_COLLECTION = "snapshots-5-1-26";
-const START_TIME = "2026-05-01 05:00:00";
-const END_TIME = "2026-05-11 05:30:00";
+const RESULTS_COLLECTION = "dxpresults-11-6-26";
+const SNAPSHOTS_COLLECTION = "snapshots-11-6-26";
+const START_TIME = "2026-11-06 04:00:00";
+const END_TIME = "2026-11-16 04:30:00";
 
 module.exports = {
   RESULTS_COLLECTION,

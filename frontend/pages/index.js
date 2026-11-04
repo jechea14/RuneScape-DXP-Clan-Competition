@@ -19,15 +19,15 @@ export default function Home() {
   const bracketA = sortData?.filter((user) => user.totalLevelBeforeDxp <= 2400);
   const bracketB = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2401 && user.totalLevelBeforeDxp <= 2800
+      user.totalLevelBeforeDxp >= 2401 && user.totalLevelBeforeDxp <= 2800,
   );
   const bracketC = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2801 && user.totalLevelBeforeDxp <= 2950
+      user.totalLevelBeforeDxp >= 2801 && user.totalLevelBeforeDxp <= 2950,
   );
   const bracketD = sortData?.filter(
     (user) =>
-      user.totalLevelBeforeDxp >= 2951 && user.totalLevelBeforeDxp <= 3050
+      user.totalLevelBeforeDxp >= 2951 && user.totalLevelBeforeDxp <= 3050,
   );
   const bracketE = sortData?.filter((user) => user.totalLevelBeforeDxp >= 3051);
   // const bracketF = sortData?.filter(
@@ -44,9 +44,9 @@ export default function Home() {
       <main>
         <div className="flex flex-col items-center px-6 md:px-0">
           <h1 className="text-2xl p-6">
-            Double XP: May 1, 2026 - May 11, 2026
+            Double XP: Nov 6, 2026 - Nov 16, 2026
           </h1>
-          <Countdown />
+          {/* <Countdown /> */}
           <h1 className="text-xl p-6">Updates every 2 hours</h1>
 
           {isLoading && <Spinner />}
